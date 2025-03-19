@@ -24,16 +24,16 @@ const Header = () => {
 
                             <PopoverPanel
                                 transition
-                                className="absolute top-full z-10 mt-3 w-screen max-w-72 overflow-hidden rounded-3xl bg-white ring-1 shadow-lg ring-gray-900/5 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in"
+                                className="absolute top-full z-10 mt-3 w-screen max-w-52 overflow-hidden rounded-3xl bg-white ring-1 shadow-lg ring-gray-900/5 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in"
                             >
                                 <div className="p-4">
                                     {menu.map((item) => (
                                         <div
                                             key={item.text}
-                                            className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50"
+                                            className="group relative flex items-center gap-x-6 rounded-lg p-2 text-sm/6 hover:bg-[#231F20]"
                                         >
                                             <div className="flex-auto">
-                                                <a href={item.href} className="block font-semibold text-gray-900">
+                                                <a href={item.href} className="block font-semibold hover:text-white text-gray-900">
                                                     {item.text}
                                                     <span className="absolute inset-0" />
                                                 </a>

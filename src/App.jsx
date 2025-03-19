@@ -4,7 +4,7 @@ import Homepage from './pages/Homepage'
 function App() {
 
   return (
-    <div className='bg-[#FBFBFBCC] h-screen'>
+    <div className='bg-[#FBFBFBCC]'>
       <Homepage />
     </div>
   )
