@@ -1,10 +1,11 @@
 import './App.css'
+import Homepage from './pages/Homepage'
 
 function App() {
 
   return (
-    <div>
-      <h1 className='text-orange-400 text-5xl'>Roland</h1>
+    <div className='bg-[#FBFBFBCC]'>
+      <Homepage />
     </div>
   )
 }
