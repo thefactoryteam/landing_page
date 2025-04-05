@@ -16,7 +16,7 @@ const Homepage = () => {
         <div style={{ backgroundImage: `url(${Grid})` }} className="h-screen">
             <Header />
             <Hero />
-            <Gallery />
+            {/* <Gallery /> */}
             <OurStory />
             <WhatWeDo />
             <OurInnovators />
