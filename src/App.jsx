@@ -7,7 +7,7 @@ function App() {
 
   return (
     <div className='bg-[#FBFBFBCC]'>
-      {/* <NeonCursor /> */}
+      <NeonCursor />
       <Homepage />
     </div>
   )
