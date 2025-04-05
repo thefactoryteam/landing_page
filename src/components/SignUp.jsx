@@ -1,7 +1,8 @@
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react'
+import { FaGoogle } from "react-icons/fa6";
 import FormInput from './FormInput';
 
-export default function SignUp({ isOpen, setIsOpen }) { // FIX: Receive state from Header
+export default function SignUp({ isOpen, setIsOpen }) { 
     return (
         <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="relative z-10">
             <DialogBackdrop className="fixed inset-0 bg-gray-500/75 transition-opacity" />
@@ -45,13 +46,22 @@ export default function SignUp({ isOpen, setIsOpen }) { // FIX: Receive state fr
                                 </form>
                             </p>
                         </div>
-                        <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse">
+                        <div className="bg-gray-50 px-4 py-3 flex flex-col md:flex-row md:justify-between">
                             <button
                                 type="button"
                                 onClick={() => setIsOpen(false)}
-                                className="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white hover:bg-red-500 sm:w-auto"
+                                className="inline-flex w-full cursor-pointer justify-center rounded-full items-center gap-1 bg-[#231F20] px-16 py-2 text-lg font-semibold text-white hover:bg-gray-900 sm:w-auto"
                             >
-                                Close
+                                Sign Up to the Factory
+                            </button>
+
+
+                            <button
+                                type="button"
+                                onClick={() => setIsOpen(false)}
+                                className="inline-flex w-full cursor-pointer justify-center items-center rounded-full gap-1 bg-[#231F20] px-16 py-2 text-lg font-semibold text-white hover:bg-gray-900 sm:w-auto"
+                            >
+                                <FaGoogle className='h-3 w-3'/> Continue with Google
                             </button>
                         </div>
                     </DialogPanel>
