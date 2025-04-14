@@ -1,61 +1,123 @@
 import React, { useState } from "react";
-import { Popover, PopoverButton, PopoverGroup, PopoverPanel } from "@headlessui/react";
+import { Menu, MenuButton, MenuItem, MenuItems, Transition } from '@headlessui/react'
 import Logo from "../assets/logo.png";
 import Logo2 from "../assets/logo_icon.png";
 import SignUp from "./SignUp";
+import { useNavigate } from "react-router";
+import { useEffect, useRef } from "react";
+import AuthModal from "./AuthModal";
+
+
+
+const menu = [
+  { href: "/", text: "Home" },
+  { href: "#our-story", text: "Our Story" },
+  { href: "#our-services", text: "Our Services" },
+  { href: "#innovation-expo", text: "Innovation Expo" },
+];
 
 const Header = () => {
-  const [isSignUpOpen, setIsSignUpOpen] = useState(false); 
+  const [isSignUpOpen, setIsSignUpOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [selectedItem, setSelectedItem] = useState("Home");
+  const navigate = useNavigate()
 
-  const menu = [
-    { href: "#get-to-know-us", text: "Get To Know Us" },
-    { href: "#our-services", text: "Our Services" },
-    { href: "#learning-and-resources", text: "Learning & Resources" },
-    { href: "#innovation-expo", text: "Innovation Expo" },
-    { href: "#Courses", text: "Courses" },
-  ];
+
+  const wrapperRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+
+
+  const navigateTo = (href) => {
+    if (href.startsWith("#")) {
+      const el = document.querySelector(href);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      navigate(href);
+    }
+  };
 
   return (
     <div className="w-full">
       <div className="md:w-4/5 px-2 md:px-0 mx-auto flex flex-row py-3 md:py-6 items-center secondaryFont">
-        
-        {/* Left Side - Expanding Home Button */}
         <div className="basis-1/3 md:basis-1/4 relative">
-          <PopoverGroup className="flex">
-            <Popover className="relative">
-              {({ open }) => (
-                <>
-                  <PopoverButton
-                    className={`text-sm font-semibold cursor-pointer px-6 py-2 
-                              text-[#2BE028] transition-all duration-300 text-left
-                              focus:outline-none focus:ring-0 focus:border-0
-                              ${open ? "bg-white border-gray-300 rounded-t-2xl shadow-lg  w-56" : "rounded-full bg-[#231F20] w-20 shadow-lg"}`}
-                  >
-                    Home
-                  </PopoverButton>
+          <div className="relative inline-block text-left" ref={wrapperRef}>
+            <div className="relative inline-flex -top-5">
+              {/* Button */}
+              <Transition
+                show={!menuOpen}
+                as="div"
+                appear
+                enter="transition ease-out duration-300"
+                enterFrom="opacity-0 scale-95"
+                enterTo="opacity-100 scale-100"
+                leave="transition ease-in duration-200"
+                leaveFrom="opacity-100 scale-100"
+                leaveTo="opacity-0 scale-95"
+              >
+                <button
+                  onClick={() => setMenuOpen(true)}
+                  className="absolute inline-flex items-center justify-center text-sm font-semibold cursor-pointer px-6 py-2 transition-all duration-300 text-left focus:outline-none rounded-full bg-[#231F20] shadow-lg text-[#2BE028] whitespace-nowrap"
+                >
+                  {selectedItem}
+                </button>
+              </Transition>
 
-                  {open && (
-                    <PopoverPanel
-                      transition
-                      className="absolute top-full left-0 w-56 bg-white rounded-b-2xl shadow-lg ring-1 ring-gray-900/5 overflow-hidden transition-all duration-300"
-                    >
-                      <div className="px-4 pb-4">
-                        {menu.map((item) => (
-                          <a
-                            key={item.text}
-                            href={item.href}
-                            className="block px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-[#231F20] hover:text-[#2BE028] rounded-xl transition"
+              {/* Menu */}
+              <Transition
+                show={menuOpen}
+                as="div"
+                appear
+                enter="transition ease-out duration-300"
+                enterFrom="opacity-0 scale-95 -translate-y-1"
+                enterTo="opacity-100 scale-100 translate-y-0"
+                leave="transition ease-in duration-200"
+                leaveFrom="opacity-100 scale-100"
+                leaveTo="opacity-0 scale-95"
+              >
+                <Menu as="div" className="absolute top-0 left-0 z-5" onClose={() => setMenuOpen(!menuOpen)}>
+                  <MenuItems
+                    static
+                    className="origin-top-left min-w-max rounded-xl bg-white py-2 px-1 shadow-xl ring-1 ring-black/10 focus:outline-none"
+                  >
+                    {menu.map((item) => (
+                      <MenuItem key={item.text}>
+                        {() => (
+                          <button
+                            onClick={() => {
+                              navigateTo(item.href)
+                              setSelectedItem(item.text);
+                              setMenuOpen(false);
+                            }}
+                            className={`w-full text-left block px-4 py-2 text-sm font-bold rounded-lg cursor-pointer transition whitespace-nowrap text-gray-900 hover:bg-[#231F20] hover:text-[#2BE028]`}
                           >
                             {item.text}
-                          </a>
-                        ))}
-                      </div>
-                    </PopoverPanel>
-                  )}
-                </>
-              )}
-            </Popover>
-          </PopoverGroup>
+                          </button>
+                        )}
+                      </MenuItem>
+                    ))}
+                  </MenuItems>
+                </Menu>
+              </Transition>
+            </div>
+          </div>
+
+
+
         </div>
 
         {/* Center - Logo */}
@@ -68,7 +130,7 @@ const Header = () => {
         <div className="basis-1/3 md:basis-1/4 text-end">
           <button
             className="rounded-full bg-[#231F20] text-[#ECFBEB] px-6 py-2 cursor-pointer shadow-lg"
-            onClick={() => setIsSignUpOpen(true)} 
+            onClick={() => setIsSignUpOpen(true)}
           >
             Sign Up
           </button>
@@ -76,7 +138,8 @@ const Header = () => {
       </div>
 
       {/* Sign-Up Modal */}
-      <SignUp isOpen={isSignUpOpen} setIsOpen={setIsSignUpOpen} /> 
+      {/* <SignUp isOpen={isSignUpOpen} setIsOpen={setIsSignUpOpen} /> */}
+      <AuthModal isOpen={isSignUpOpen} setIsOpen={setIsSignUpOpen} />
     </div>
   );
 };

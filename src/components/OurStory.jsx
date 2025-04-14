@@ -6,20 +6,24 @@ import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
 
 const OurStory = () => {
   return (
-    <div className="primary-font grid grid-cols-3 w-4/5 mx-auto py-20 relative overflow-hidden">
-      
+    <div className="primary-font grid grid-cols-1 md:grid-cols-3 w-4/5 mx-auto py-20 relative overflow-hidden" id="our-story">
+
       <motion.div
-        className="absolute w-40 h-40 bg-[#2BE028] rounded-full -z-10 left-12 top-80"
+        className="absolute w-24 md:w-40 h-24 md:h-40 bg-[#2BE028] rounded-full -z-10 left-12 top-80"
         animate={{
           scale: [1, 1.5, 1],
         }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       ></motion.div>
 
+      <motion.div
+        className="absolute md:hidden w-20 md:w-40 h-20 md:h-40 bg-[#ECFBEB] rounded-full -z-10 right-16 top-64"
+      ></motion.div>
+
       <div className="relative">
         {/* Subheading */}
         <motion.p
-          className="italic text-[#231F20] meriwether-font text-3xl"
+          className="italic text-[#231F20] meriwether-font text-3xl text-center md:text-left"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
@@ -29,22 +33,22 @@ const OurStory = () => {
         </motion.p>
 
         <div className="relative flex justify-center items-center mt-20">
-  
+
           <motion.img
             src={Img1}
             alt="Story 1"
-            className="w-52 rounded-lg absolute rotate-[-3deg] top-[-10px] left-[65px]"
+            className="w-44 md:w-52 rounded-lg absolute rotate-[-3deg] top-[-10px] left-[40px] md:left-[65px]"
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0, rotate: 0 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
             viewport={{ once: true }}
           />
 
-       
+
           <motion.img
             src={Img2}
             alt="Story 2"
-            className="w-52 rounded-lg rotate-[3deg] mt-40"
+            className="w-44 md:w-52 rounded-lg rotate-[3deg] mt-36 md:mt-40"
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0, rotate: 0 }}
             transition={{ duration: 1.2, ease: "easeOut", delay: 0.3 }}
@@ -53,29 +57,29 @@ const OurStory = () => {
         </div>
       </div>
 
-      <div className="col-span-2 space-y-5">
-       
+      <div className="col-span-2 space-y-5 mt-10 md:mt-0">
+
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <span className="ps-12 text-3xl italic">we are</span>
+          <span className="ps-6 md:ps-12 text-lg md:text-3xl italic">we are</span>
           <div className="flex">
-            <motion.p className="text-[#2BE028] text-5xl leading-none">
+            <motion.p className="text-[#2BE028] text-2xl md:text-5xl leading-none">
               <RiDoubleQuotesL />
             </motion.p>
 
             <motion.h2
-              className="text-7xl font-extralight"
+              className="text-3xl md:text-7xl font-extralight"
               whileInView={{ scale: 1 }}
               transition={{ duration: 1, ease: "backOut", delay: 0.3 }}
             >
               The Factory
             </motion.h2>
 
-            <motion.p className="text-[#2BE028] text-5xl leading-none">
+            <motion.p className="text-[#2BE028] text-2xl md:text-5xl leading-none">
               <RiDoubleQuotesR />
             </motion.p>
           </div>
@@ -83,7 +87,7 @@ const OurStory = () => {
         </motion.div>
 
         <motion.p
-          className="text-5xl font-bold leading-tight"
+          className="text-2xl md:text-5xl font-bold leading-tight"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1.2, ease: "easeOut", delay: 0.4 }}
@@ -97,10 +101,10 @@ const OurStory = () => {
             ignite
           </motion.span>{" "}
           Africa's tech revolution by empowering the continent's{" "}
-          <motion.span 
+          <motion.span
             className="font-normal"
             whileHover={{ color: "#2BE028", textShadow: "0px 0px 10px rgba(43, 224, 40, 0.8)" }}
-            >brightest minds.</motion.span>
+          >brightest minds.</motion.span>
         </motion.p>
 
         <motion.p
@@ -114,7 +118,7 @@ const OurStory = () => {
         </motion.p>
 
         <motion.p
-          className="font-medium text-4xl text-gray-900"
+          className="font-medium text-2xl md:text-4xl text-gray-900"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}
