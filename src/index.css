@@ -2,10 +2,6 @@
 
 @import "tailwindcss";
 
-.secondaryFont {
-    font-family: 'Open Sauce One', sans-serif !important;
-}
-
 body{
     overflow-x: hidden;
 }

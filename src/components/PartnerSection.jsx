@@ -13,12 +13,12 @@ const partners = [
 
 const PartnerSection = () => {
   return (
-    <div className="w-4/5 mx-auto mt-10">
+    <div className="w-full md:w-4/5 mx-auto mt-10">
       {/* Partners Section */}
       <div className="">
-        <div className="bg-black text-white rounded-2xl p-10">
-          <h2 className="text-3xl font-bold">Our Innovation Champions (Partners)</h2>
-          <p className="text-gray-300 text-2xl mt-2 w-[800px]">
+        <div className="bg-black text-white md:rounded-2xl p-5 md:p-10">
+          <h2 className="text-xl md:text-3xl font-bold">Our Innovation Champions (Partners)</h2>
+          <p className="text-gray-300 text-lg md:text-2xl mt-2 md:w-[800px]">
             Join our network of leading organizations and investors shaping the future
             of African tech innovation. Together, we’re creating opportunities, sharing 
             resources, and driving ecosystem growth.
@@ -36,7 +36,7 @@ const PartnerSection = () => {
               }}
             >
               {[...partners, ...partners].map((logo, index) => (
-                <img key={index} src={logo} alt="partner" className="h-8"/>
+                <img key={index} src={logo} alt="partner" className="h-5 md:h-8"/>
               ))}
             </motion.div>
           </div>

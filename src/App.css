@@ -5,3 +5,18 @@
   font-family: "Merriweather", serif;
   font-weight: 300;
 }
+.secondaryFont {
+  font-family: 'Open Sauce One', sans-serif !important;
+}
+
+@media (max-width: 767px) {
+  .hero-animate{
+    font-family: 'Open Sauce One', sans-serif !important;
+  }
+}
+@media (min-width: 768px) {
+  .hero-animate{
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+  }
+}
