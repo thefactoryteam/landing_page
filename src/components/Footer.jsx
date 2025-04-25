@@ -7,15 +7,21 @@ const Footer = () => {
             <div className=" py-6 flex flex-col md:flex-row justify-between text-sm ">
                 <div className='flex flex-col md:flex-row gap-20'>
                     <div className='flex justify-center'>
-                        <img src={Logo} alt="Factory Logo" className="h-16 w-auto" />
+                        <img src={Logo} alt="Factory Logo" className="h-10 w-auto" />
                     </div>
 
                     <nav className="md:mt-3 flex flex-col text-center md:text-left gap-2 md:gap-5">
-                        <a href="#" className=" text-xl">Home</a>
-                        <a href="#" className=" text-xl">Incubator Programmes</a>
-                        <a href="#" className=" text-xl">Bootcamps/Training</a>
-                        <a href="#" className=" text-xl">Co-working Space</a>
+                        {["Home", "Incubator Programmes", "Bootcamps/Training", "Co-working Space"].map((text, i) => (
+                            <a
+                                key={i}
+                                href="#"
+                                className="relative text-xl text-black hover:text-[#2BE028] transition-all duration-300 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-[#2BE028] hover:after:w-10 after:transition-all after:duration-300"
+                            >
+                                {text}
+                            </a>
+                        ))}
                     </nav>
+
                 </div>
 
                 {/* Contact Form */}
@@ -33,7 +39,7 @@ const Footer = () => {
                 </div>
             </div>
 
-            <hr className='mt-10 border-[#E7E7E7]'/>
+            <hr className='mt-10 border-[#E7E7E7]' />
 
             {/* Footer Bottom */}
             <div className="flex flex-col md:flex-row items-center justify-between text-gray-500 text-xs py-10">

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import ClipImage from "../assets/madagascar-image.png";
-import BlackMarker from "../assets/Black-marker-arrow.png";
-import BlackArrow from "../assets/Black-arrow.png";
+import ClipImage from "../../assets/home/madagascar-image.png";
+import BlackMarker from "../../assets/home/Black-marker-arrow.png";
+import BlackArrow from "../../assets/home/Black-arrow.png";
 
 const words = ["Africa", "Naija"];
 
