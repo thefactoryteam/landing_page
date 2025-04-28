@@ -1,6 +1,5 @@
 import React from 'react'
 import Header from '../components/Header'
-import Hero from '../components/Home/Hero'
 import Grid from '../assets/Grid.png'
 import { Gallery } from '../components/Home/Gallery'
 import OurStory from '../components/Home/OurStory'
@@ -9,6 +8,7 @@ import OurInnovators from '../components/Home/OurInnovators'
 import VideoPlayerSection from '../components/Home/VideoPlayerSection'
 import PartnerSection from '../components/Home/PartnerSection'
 import Footer from '../components/Footer'
+import Hero from '../components/Home/Hero'
 
 const Homepage = () => {
   return (

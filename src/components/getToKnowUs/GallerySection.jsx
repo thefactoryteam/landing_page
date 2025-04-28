@@ -28,7 +28,7 @@ const GallerySection = () => {
                         </div>
                     </motion.div>
 
-                    <div class="grid grid-flow-col grid-rows-2 gap-4 mt-4">
+                    <div className="grid grid-flow-col grid-rows-2 gap-4 mt-4">
                         <motion.div
                             className="col-span-1"
                             initial={{ opacity: 0, x: -50 }}
@@ -65,7 +65,7 @@ const GallerySection = () => {
                 </div>
 
                 <div className='w-full lg:w-[45%] flex flex-col'>
-                    <div class="grid grid-flow-col grid-rows-2 gap-4">
+                    <div className="grid grid-flow-col grid-rows-2 gap-4">
 
                         <motion.div
                             className="row-span-3"

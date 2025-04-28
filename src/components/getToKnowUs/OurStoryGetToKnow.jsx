@@ -40,7 +40,7 @@ const OurStoryGetToKnow = () => {
         </>
     )
     return (
-        <>
+        <div className='bg-[#F4F4F4]'>
             <StoryComponent
                 sec_title="our story"
                 img1={Festus}
@@ -51,7 +51,7 @@ const OurStoryGetToKnow = () => {
                 head_text="The Factory"
                 body_text={bodyContent}
             />
-        </>
+        </div>
     )
 }
 
