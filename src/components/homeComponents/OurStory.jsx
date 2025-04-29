@@ -8,7 +8,7 @@ const OurStory = () => {
   const bodyContent = (
     <>
       <motion.p
-          className="text-2xl md:text-3xl font-bold leading-tight"
+          className="text-[17px] md:text-3xl font-bold leading-tight"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1.2, ease: "easeOut", delay: 0.4 }}
@@ -27,7 +27,7 @@ const OurStory = () => {
         </motion.p>
 
         <motion.p
-          className="text-gray-700 text-xl "
+          className="text-gray-700 text-[16px] md:text-xl "
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
@@ -37,7 +37,7 @@ const OurStory = () => {
         </motion.p>
 
         <motion.p
-          className="font-medium text-2xl md:text-3xl text-gray-900"
+          className="font-medium text-[16px] md:text-3xl text-gray-900"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}
@@ -55,18 +55,18 @@ const OurStory = () => {
     </>
   )
   return (
-    <>
+    <section className="bg-[#F4F4F4]">
       <StoryComponent 
         sec_title="our story"
         img1={Img1}
         img1_classes="w-44 md:w-40 rounded-lg absolute rotate-[-3deg] top-[-10px] left-[40px] md:left-[40px]"
         img2={Img2}
-        img2_classes="w-44 md:w-40 rounded-lg absolute rotate-[3deg] mt-36 top-[-20px] left-[40px] md:left-[70px]"
+        img2_classes="w-44 md:w-40 rounded-lg absolute rotate-[3deg] mt-36 top-[-20px] left-[80px] md:left-[70px]"
         span_text="we are"
         head_text="The Factory"
         body_text={bodyContent}
       />
-    </>
+    </section>
   );
 };
 

@@ -13,7 +13,7 @@ import PartnerSection from '../components/homeComponents/PartnerSection'
 const Homepage = () => {
   return (
     <>
-        <div style={{ backgroundImage: `url(${Grid})` }} className="h-screen">
+        <div style={{ backgroundImage: `url(${Grid})` }} className="h-screend">
             <Header />
             <Hero />
             {/* <Gallery /> */}

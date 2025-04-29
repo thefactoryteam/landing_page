@@ -1,7 +1,6 @@
 import React from 'react'
-import { motion } from 'framer-motion'
-import { fadeInUp } from './OurVision'
-import SectionHeaders from './SectionHeaders'
+import SectionHeaders from '../SectionHeaders'
+import { FadeInUp } from '../../utils/animations'
 
 
 const OurMission = () => {
@@ -13,7 +12,7 @@ const OurMission = () => {
                 <SectionHeaders 
                   title="Our mission"
                   desc="Our mission is to ignite Africa's Tech revolution by empowering the continent's most promising minds and fostering a collaborative ecosystem for innovation and growth."
-                  fadeInUp={fadeInUp}
+                  fadeInUp={FadeInUp}
                 />
               </div>
             </section>

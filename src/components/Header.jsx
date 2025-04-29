@@ -11,6 +11,7 @@ import { IoIosArrowForward } from "react-icons/io";
 const menu = [
   { href: "/", text: "Home" },
   { href: "/get-to-know-us", text: "Get To Know Us" },
+  { href: "/innovation-expo", text: "Innovation Expo" },
   {
     href: "#",
     text: "Our Services",
@@ -21,7 +22,6 @@ const menu = [
     ]
   },
   { href: "#learning-and-resources", text: "Learning & Resources" },
-  { href: "#innovation-expo", text: "Innovation Expo" },
   { href: "#Courses", text: "Courses" },
 ];
 
@@ -211,7 +211,7 @@ const Header = () => {
                     <Menu as="div" onClose={() => setMenuOpen(false)}>
                       <MenuItems
                         static
-                        className="rounded-3xl bg-[#F4F4F4] py-2 px-1 focus:outline-none"
+                        className="rounded-3xl bg-[#F4F4F4] shadow-lg py-2 px-1 focus:outline-none"
                       >
                         {menu.map((item) => (
                           <MenuItem key={item.text}>
