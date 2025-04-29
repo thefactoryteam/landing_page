@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 
 const StoryComponent = ({ sec_title, img1, img2, img1_classes, img2_classes, span_text, head_text, body_text }) => {
   return (
-    <div className="primary-font grid grid-cols-1 md:grid-cols-3 max-w-3/4 w-full mx-auto py-20 relative overflow-hidden" id="our-story">
+    <div className="primary-font grid grid-cols-1 md:grid-cols-3 max-w-4/5 md:max-w-3/4 w-full mx-auto py-20 relative overflow-hidden" id="our-story">
 
       <motion.div
-        className="absolute w-24 md:w-20 h-24 md:h-20 bg-[#2BE028] rounded-full -z-10 left-12 top-80"
+        className="absolute w-24 md:w-20 h-24 md:h-20 bg-[#2BE028] rounded-full left-12 top-80"
         animate={{
           scale: [1, 1.5, 1],
         }}
@@ -15,7 +15,7 @@ const StoryComponent = ({ sec_title, img1, img2, img1_classes, img2_classes, spa
       ></motion.div>
 
       <motion.div
-        className="absolute md:hidden w-20 md:w-40 h-20 md:h-40 bg-[#ECFBEB] rounded-full -z-10 right-16 top-64"
+        className="absolute md:hidden w-20 md:w-40 h-20 md:h-40 bg-[#ECFBEB] rounded-full -z-1 right-16 top-64"
       ></motion.div>
 
       <div className="relative">
@@ -55,7 +55,7 @@ const StoryComponent = ({ sec_title, img1, img2, img1_classes, img2_classes, spa
         </div>
       </div>
 
-      <div className="col-span-2 space-y-5 max-w-2xl mt-10 md:mt-0">
+      <div className="col-span-2 space-y-5 max-w-2xl mt-96 md:mt-0">
 
         <motion.div
           initial={{ opacity: 0, y: 50 }}

@@ -10,7 +10,7 @@ import OurValues from '../components/getToKnowUs/OurValues'
 
 const GetToKnowUs = () => {
   return (
-    <div style={{ backgroundImage: `url(${Grid})` }} className="h-[115vh] bg-[#F4F4F4]">
+    <div style={{ backgroundImage: `url(${Grid})` }} className="h-[11b5vh] bg-[#F4F4F4]">
         <Header />
         <GallerySection />
         <OurStoryGetToKnow />
