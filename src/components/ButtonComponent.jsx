@@ -9,7 +9,7 @@ const ButtonComponent = ({ text, arrow = true }) => {
             className="mt-5 py-2 px-6 w-full md:w-auto bg-[#231F20] text-white group text-xs md:text-lg cursor-pointer rounded-full flex items-center justify-center gap-3 relative overflow-hidden"
         >
             <span className="transition-colors duration-300 group-hover:text-[#2BE028]">
-                Learn More
+                { text }
             </span>
             <motion.span
                 variants={{
