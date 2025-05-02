@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaArrowRight, FaCircleCheck } from "react-icons/fa6";
-import ButtonComponent from '../ButtonComponent';
-import SectionHeaders from '../SectionHeaders';
+import ButtonComponent from '../shared/ButtonComponent'
+import SectionHeaders from '../shared/SectionHeaders'
 import { FadeInUp } from '../../utils/animations';
 
 const ExpoInfoSection = () => {

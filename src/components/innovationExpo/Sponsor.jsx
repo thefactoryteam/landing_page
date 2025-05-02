@@ -1,5 +1,5 @@
 import React from 'react'
-import SectionHeaders from '../SectionHeaders'
+import SectionHeaders from '../shared/SectionHeaders'
 import { FadeInUp } from '../../utils/animations'
 import Gold from '../../assets/innovationExpo/gold.png'
 import Platinum from '../../assets/innovationExpo/platinum.png'

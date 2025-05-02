@@ -1,8 +1,8 @@
 import React from 'react';
 import metricsImage from '../../assets/innovationExpo/shininglogo.png';
-import SectionHeaders from '../SectionHeaders';
+import SectionHeaders from '../shared/SectionHeaders'
 import { FadeInUp } from '../../utils/animations';
-import ButtonComponent from '../ButtonComponent';
+import ButtonComponent from '../shared/ButtonComponent'
 
 const ImpactMetrics = () => {
     return (

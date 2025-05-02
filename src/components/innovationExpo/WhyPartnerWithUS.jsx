@@ -1,5 +1,5 @@
 import React from 'react'
-import SectionHeaders from '../SectionHeaders'
+import SectionHeaders from '../shared/SectionHeaders'
 import { FadeInUp } from '../../utils/animations'
 import BeneftsComponent from '../shared/BeneftsComponent'
 

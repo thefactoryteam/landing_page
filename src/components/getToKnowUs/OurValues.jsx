@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import SectionHeaders from '../SectionHeaders'
+import SectionHeaders from '../shared/SectionHeaders'
 import { motion } from "framer-motion";
 import FactoryGray from "../../assets/getToKnowUs/factoryGray.png"
 import Elavating from "../../assets/getToKnowUs/elevatingTech.png"

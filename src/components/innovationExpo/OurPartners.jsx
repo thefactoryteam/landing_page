@@ -1,6 +1,6 @@
 import React from 'react'
 import { FadeInUp } from '../../utils/animations'
-import SectionHeaders from '../SectionHeaders'
+import SectionHeaders from '../shared/SectionHeaders'
 import Sigc from "../../assets/innovationExpo/sigc.png"
 import Tinapa from "../../assets/innovationExpo/tinapa.png"
 import Cccc from "../../assets/innovationExpo/cccc.png"

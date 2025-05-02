@@ -314,8 +314,6 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { Menu, MenuButton, MenuItem, MenuItems, Transition } from '@headlessui/react';
-import Logo from "../assets/logo.png";
-import Logo2 from "../assets/logo_icon.png";
 import { useNavigate, useLocation } from "react-router";
 import AuthModal from "./AuthModal";
 import { motion, AnimatePresence } from 'framer-motion';
@@ -347,7 +345,7 @@ const menu = [
   { href: "#Courses", text: "Courses" },
 ];
 
-const Header = () => {
+const Header = ({bgScroll="bg-white/60 border-b border-gray-200", bg="bg-transparent", headerSpacer=true, bigScreenlogo, smallScreenLogo }) => {
   const location = useLocation();
   const [isSignUpOpen, setIsSignUpOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -533,8 +531,8 @@ const Header = () => {
       <header className={`
         fixed w-full top-0 left-0 right-0 z-50 transition-all duration-300
         ${isScrolled
-          ? "backdrop-blur-md bg-white/60 border-b border-gray-200"
-          : "bg-transparent border-transparent"}
+          ? `backdrop-blur-md ${bgScroll}`
+          : `${bg} border-transparent`}
       `}>
 
         <div className={`md:w-4/5 px-2 md:px-0 mx-auto flex flex-row items-center justify-between transition-all secondaryFont duration-300 ease-in-out ${isScrolled ? "py-3 md:py-3" : "py-4 md:py-6"}`}>
@@ -556,7 +554,7 @@ const Header = () => {
               >
                 <button
                   onClick={() => setMenuOpen(true)}
-                  className="absolute inline-flex items-center justify-center text-sm font-semibold cursor-pointer px-6 py-2 transition-all duration-300 text-left focus:outline-none rounded-full bg-[#231F20] shadow-lg text-[#2BE028] whitespace-nowrap"
+                  className={`absolute inline-flex items-center justify-center text-sm font-semibold cursor-pointer px-6 py-2 transition-all duration-300 text-left focus:outline-none rounded-full bg-[#231F20] shadow-lg text-[#2BE028] whitespace-nowrap ${!headerSpacer ? "border-2 border-[#FBFBFB]" : "" } `}
                 >
                   {selectedItem}
                 </button>
@@ -645,12 +643,12 @@ const Header = () => {
         {/* Center - Logo */}
         <div className="basis-1/3 md:basis-2/4 flex justify-center">
           <img
-            src={Logo}
+            src={bigScreenlogo}
             alt="The Factory Logo"
             className={`hidden md:block transition-all duration-300 ease-in-out ${isScrolled ? "h-8" : "h-11"}`}
           />
           <img
-            src={Logo2}
+            src={smallScreenLogo}
             alt="The Factory Logo"
             className={`h-9 w-auto md:hidden transition-all duration-300 ease-in-out ${isScrolled ? "h-7" : "h-9"}`}
           />
@@ -659,7 +657,7 @@ const Header = () => {
         {/* Right Side - Sign Up Button */}
         <div className="basis-1/3 md:basis-1/4 text-end">
           <button
-            className="rounded-full bg-[#231F20] text-[#ECFBEB] px-6 py-2 cursor-pointer shadow-lg"
+            className={`rounded-full bg-[#231F20] text-[#ECFBEB] px-6 py-2 cursor-pointer shadow-lg ${!headerSpacer ? "border-2 border-[#FBFBFB]" : "" }`}
             onClick={() => setIsSignUpOpen(true)}
           >
             Sign Up
@@ -672,7 +670,8 @@ const Header = () => {
     </header>
     
     {/* Add spacing to prevent content overlap */}
-    <HeaderSpacer isScrolled={isScrolled} />
+    { headerSpacer && <HeaderSpacer isScrolled={isScrolled} />}
+   
     </>
   );
 };

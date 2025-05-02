@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Video from "../../assets/getToKnowUs/Video.png"
-import SectionHeaders from '../SectionHeaders'
+import SectionHeaders from '../shared/SectionHeaders'
 import { FadeInUp } from '../../utils/animations'
 
 
