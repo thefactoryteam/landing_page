@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import HeroImg from '../../assets/Jukebox/heroImg.png'
+import HeroImg from '../../assets/Jukebox/heroImg.webp'
 import JukeImg from '../../assets/Jukebox/jukeBox.png'
 import ButtonComponent from '../shared/ButtonComponent'
 
