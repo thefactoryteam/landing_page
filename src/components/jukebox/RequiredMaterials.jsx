@@ -36,8 +36,8 @@ const RequiredMaterials = () => {
                 <div className='flex gap-20 mt-16'>
 
                     <div className='flex-1/2'>
-                        <div className='flex justify-end'>
-                            <img src={ImgApp} alt="Jukebox" className='h-[700px]' />
+                        <div className='flex justify-end sticky top-30'>
+                            <img src={ImgApp} alt="Jukebox" className='h-[600px]' />
                         </div>
                     </div>
 
@@ -47,7 +47,7 @@ const RequiredMaterials = () => {
                         </h2>
                         <div className="space-y-6">
                             {criteria.map((item, idx) => (
-                                <div key={idx} className="text-sm sm:text-xl max-w-md">
+                                <div key={idx} className="text-sm sm:text-xl max-w-md mb-10">
                                     <p className="text-[#71BF44] font-bold">
                                         {item.number} {item.title}:
                                     </p>

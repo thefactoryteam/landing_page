@@ -21,7 +21,6 @@ const Homepage = () => {
           smallScreenLogo={DarkLogoSmall}
         />
         <Hero />
-        <Hero />
         {/* <Gallery /> */}
         <OurStory />
         <WhatWeDo />

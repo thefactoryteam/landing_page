@@ -6,6 +6,7 @@ import WhiteLogoSmall from "../assets/logo_icon_white.png";
 import WhyJuxBox from '../components/jukebox/WhyJuxBox';
 import ApplicationCriteria from '../components/jukebox/ApplicationCriteria';
 import RequiredMaterials from '../components/jukebox/RequiredMaterials';
+import ApplicationProcess from '../components/jukebox/ApplicationProcess';
 
 const Jukebox = () => {
   return (
@@ -21,6 +22,7 @@ const Jukebox = () => {
         <WhyJuxBox />
         <ApplicationCriteria />
         <RequiredMaterials />
+        <ApplicationProcess />
     </div>
   )
 }
