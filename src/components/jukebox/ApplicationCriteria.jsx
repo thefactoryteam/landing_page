@@ -83,7 +83,7 @@ const ApplicationCriteria = () => {
 
                     </div>
                     <div className='flex-1/2'>
-                        <div className='flex justify-end'>
+                        <div className='flex justify-end sticky top-28'>
                             <img src={ImgApp} alt="Jukebox" className='h-[700px]' />
                         </div>
                     </div>
