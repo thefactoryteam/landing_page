@@ -1,7 +1,7 @@
 import React from "react";
 import Img1 from "../../assets/home/Rectangle 31b.png";
 import Img2 from "../../assets/home/Rectangle 32b.png";
-import StoryComponent from "../StoryComponent";
+import StoryComponent from "../shared/StoryComponent";
 import { motion } from "framer-motion";
 
 const OurStory = () => {

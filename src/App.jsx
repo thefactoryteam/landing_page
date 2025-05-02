@@ -1,6 +1,6 @@
 import { BrowserRouter } from 'react-router'
 import './App.css'
-import ScrollToTopButton from './components/ScrollToTopButton'
+import ScrollToTopButton from './components/shared/ScrollToTopButton'
 import Homepage from './pages/Homepage'
 import NeonCursor from './utils/CustomCursor'
 import AppRoutes from './components/AppRoutes'

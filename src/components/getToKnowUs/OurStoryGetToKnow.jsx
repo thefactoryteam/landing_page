@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from "framer-motion";
 import Festus from "../../assets/getToKnowUs/festus1.png"
 import Daniel from "../../assets/getToKnowUs/daniel.png"
-import StoryComponent from '../StoryComponent';
+import StoryComponent from '../shared/StoryComponent';
 
 const OurStoryGetToKnow = () => {
     const bodyContent = (

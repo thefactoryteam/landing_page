@@ -1,7 +1,7 @@
 import React from 'react'
-import SectionHeaders from '../SectionHeaders'
+import SectionHeaders from '../shared/SectionHeaders'
 import { FadeInUp } from '../../utils/animations'
-import ButtonComponent from '../ButtonComponent'
+import ButtonComponent from '../shared/ButtonComponent'
 import metricsImage from '../../assets/innovationExpo/shininglogo.png';
 import BeneftsComponent from '../shared/BeneftsComponent';
 
