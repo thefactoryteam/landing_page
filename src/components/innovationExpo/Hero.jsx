@@ -1,8 +1,6 @@
-
-
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import InnovHeroImg from "../../assets/innovationExpo/Hero Section.png"
+import InnovHeroImg from "../../assets/innovationExpo/Hero Section.webp"
 
 const Hero = () => {
 
