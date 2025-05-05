@@ -9,7 +9,11 @@ const Hero = () => {
         <section className="w-full h-screen overflow-hidden relative bg-white primary-font">
             <motion.div
                 className="relative w-full h-full bg-cover bg-top top-0 flex items-center"
-                style={{ backgroundImage: `url(${HeroImg})` }}
+                style={{ 
+                    backgroundImage: `url(${HeroImg})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}

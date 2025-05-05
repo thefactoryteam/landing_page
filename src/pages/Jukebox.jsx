@@ -7,6 +7,7 @@ import WhyJuxBox from '../components/jukebox/WhyJuxBox';
 import ApplicationCriteria from '../components/jukebox/ApplicationCriteria';
 import RequiredMaterials from '../components/jukebox/RequiredMaterials';
 import ApplicationProcess from '../components/jukebox/ApplicationProcess';
+import Footer from '../components/shared/Footer';
 
 const Jukebox = () => {
   return (
@@ -23,6 +24,7 @@ const Jukebox = () => {
         <ApplicationCriteria />
         <RequiredMaterials />
         <ApplicationProcess />
+        <Footer />
     </div>
   )
 }
