@@ -4,8 +4,8 @@ import { FadeInUp } from '../../utils/animations'
 import Gold from '../../assets/innovationExpo/gold.png'
 import Platinum from '../../assets/innovationExpo/platinum.png'
 import Silver from '../../assets/innovationExpo/silver.png'
-import Gold2 from '../../assets/innovationExpo/gold2.png'
-import Platinum2 from '../../assets/innovationExpo/platinum2.png'
+import Gold2 from '../../assets/innovationExpo/Gold2.png'
+import Platinum2 from '../../assets/innovationExpo/Platinum2.png'
 
 const Sponsor = () => {
     return (
