@@ -9,7 +9,7 @@ import Jukebox from "../../assets/innovationExpo/jukebox.png"
 
 const OurPartners = () => {
     return (
-        <section className='w-full bg-gray-50 py-16 px-4 md:px-8 lg:px-16'>
+        <section className='w-full bg-gray-50 py-8 px-4 md:px-8 lg:px-16'>
             <div className='max-w-4xl mx-auto'>
                 <div className='text-center'>
                     <SectionHeaders

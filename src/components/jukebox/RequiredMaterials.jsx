@@ -33,21 +33,21 @@ const RequiredMaterials = () => {
     return (
         <section className='bg-black text-white p-8 md:p-16 primary-font'>
             <div className='max-w-6xl mx-auto'>
-                <div className='flex gap-20 mt-16'>
+                <div className='flex flex-col md:flex-row gap-20 mt-16'>
 
                     <div className='flex-1/2'>
-                        <div className='flex justify-end sticky top-30'>
-                            <img src={ImgApp} alt="Jukebox" className='h-[600px]' />
+                        <div className='flex md:justify-end sticky top-30'>
+                            <img src={ImgApp} alt="Jukebox" className='h-[400px] md:h-[600px]' />
                         </div>
                     </div>
 
                     <div className='flex-1/2'>
-                        <h2 className="text-6xl font-bold mb-14 leading-20">
+                        <h2 className="text-4xl md:text-6xl font-bold mb-14 leading-14 md:leading-20">
                             Required <br /> <span className="text-[#71BF44]">Materials:</span>
                         </h2>
                         <div className="space-y-6">
                             {criteria.map((item, idx) => (
-                                <div key={idx} className="text-sm sm:text-xl max-w-md mb-10">
+                                <div key={idx} className="text-sm sm:text-xl max-w-md md:mb-10">
                                     <p className="text-[#71BF44] font-bold">
                                         {item.number} {item.title}:
                                     </p>

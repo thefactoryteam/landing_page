@@ -36,7 +36,7 @@ const ApplicationProcess = () => {
     return (
         <section className="p-8 md:p-16 primary-font" style={{ backgroundImage: `url(${Grid})` }}>
             <div className='text-center mt-20'>
-                <h2 className="text-5xl font-bold mb-14 leading-20">
+                <h2 className="text-4xl md:text-5xl font-bold mb-14 leading-14 md:leading-20">
                     Application Process:
                 </h2>
             </div>
@@ -56,14 +56,14 @@ const ApplicationProcess = () => {
                         </div>
 
                         {/* Text Content */}
-                        <div className='w-full'>
+                        <div className='w-full z-10'>
                             <div className="text-sm md:text-base font-bold leading-tight">
                                 <div className='flex justify-between'>
-                                    <p className='font-extrabold text-3xl'>
+                                    <p className='font-extrabold text-[17px] md:text-3xl'>
                                         {step.title}{' '}
                                         <span className="text-[#71BF44] font-normal">{step.label}</span>
                                     </p>
-                                    <p className=''><BiSolidPencil size={30} /> </p>
+                                    <p className=''><BiSolidPencil className='text-sm md:text-3xl' /> </p>
                                 </div>
 
                             </div>

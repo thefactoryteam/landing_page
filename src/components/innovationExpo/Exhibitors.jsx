@@ -18,7 +18,7 @@ const Exhibitors = () => {
     const carouselImg = [Img1, Img2, Img3, Img4, Img5, Img6, Img7, Img8, Img9, Img10]
     
     return (
-        <section className='w-full bg-gradient-to-b from-white to-gray-50 py-20 pxd-4 md:px-d8 lg:px-1d6'>
+        <section className='w-full bg-gradient-to-b from-white to-gray-50 py-8 pxd-4 md:px-d8 lg:px-1d6'>
             <div className='max-w-4xl mx-auto'>
                 <div className='text-center'>
                     <motion.h2 
@@ -36,7 +36,7 @@ const Exhibitors = () => {
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true }}
-                        className={`text-[#231F20] mx-auto mb-5 text-lg primary-font font-semibold md:text-3xl relative z-10 max-w-2xl`}
+                        className={`text-[#231F20] mx-auto mb-5 text-lg primary-font font-bold md:text-3xl relative z-10 max-w-2xl`}
                     >
                         Showcase Your Innovation at <br /> The Factory Innovation Expo
                     </motion.h3>

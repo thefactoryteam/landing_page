@@ -55,16 +55,22 @@ const ApplicationCriteria = () => {
     return (
         <section className='bg-black text-white p-8 md:p-16 primary-font'>
             <div className='max-w-6xl mx-auto'>
-                <div className='flex items-center'>
+                <div className='flex flex-col md:flex-row md:items-center'>
                     <div className='flex-3/5'>
-                        <h2 className="text-6xl font-bold mb-4 leading-20">
+                        <h2 className="text-4xl md:text-6xl font-bold mb-4 leading-14 md:leading-20">
                             <span className="text-[#71BF44]">Application</span><br />Criteria:
                         </h2>
                     </div>
                     <div className='flex-2/5'>
-                        <p className="max-w-xl text-xl leading-8">
+                        <p className="max-w-xl text-[17px] md:text-xl leading-8">
                             To be considered for the Jukebox program, startups must meet the following criteria:
                         </p>
+                    </div>
+                </div>
+
+                <div className='flex justify-center md:hidden'>
+                    <div className='pt-10'>
+                        <img src={ImgApp} alt="Jukebox" className='h-[400px]' />
                     </div>
                 </div>
 
@@ -82,7 +88,7 @@ const ApplicationCriteria = () => {
                         </div>
 
                     </div>
-                    <div className='flex-1/2'>
+                    <div className='flex-1/2 hidden md:block'>
                         <div className='flex justify-end sticky top-28'>
                             <img src={ImgApp} alt="Jukebox" className='h-[700px]' />
                         </div>

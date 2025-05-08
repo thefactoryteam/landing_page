@@ -12,7 +12,7 @@ const WhyPartnerWithUS = () => {
     ]
 
     return (
-        <section className='w-full bg-gradient-to-b from-gray-50 to-white py-20 px-4 md:px-8 lg:px-16'>
+        <section className='w-full bg-gradient-to-b from-gray-50 to-white py-8 px-4 md:px-8 lg:px-16'>
             <div className='max-w-5xl mx-auto'>
                 <div className='text-center mb-12'>
                     <SectionHeaders
