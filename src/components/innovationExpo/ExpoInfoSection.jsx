@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaArrowRight, FaCircleCheck } from "react-icons/fa6";
+import BlackIcon from "../../assets/innovationExpo/goodblackicon.png"
+import GreenIcon from "../../assets/innovationExpo/greengoodicon.png"
 import ButtonComponent from '../shared/ButtonComponent'
 import SectionHeaders from '../shared/SectionHeaders'
 import { FadeInUp } from '../../utils/animations';
@@ -56,7 +58,7 @@ const ExpoInfoSection = () => {
 
     return (
         <section className="w-full bg-gray-50 py-16 px-4 md:px-8 lg:px-16 ">
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-5xl mx-auto">
                 {/* Main heading */}
                 <div className='max-w-2xl mx-auto text-center'>
            
@@ -81,7 +83,7 @@ const ExpoInfoSection = () => {
 
                 {/* Value cards grid with simplified animation */}
                 <motion.div
-                    className="grid grid-cols-1 md:grid-cols-2 gap-6"
+                    className="grid grid-cols-1 md:grid-cols-2 gap-10"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.1 }}
@@ -96,14 +98,22 @@ const ExpoInfoSection = () => {
                                 }`}
                             variants={fadeInUpLight}
                         >
-
-                            <h3 className="text-3xl font-bold mb-3">{card.title}</h3>
+                            <div className='md:w-xs md:m-5'>
+                                <h3 className="text-3xl font-bold mb-3">{card.title}</h3>
                             <p className={`${card.dark ? 'text-gray-300' : 'text-gray-700'} mb-8 text-xl`}>
                                 {card.description}
                             </p>
+                            </div>
+
+                            
                             <div className="absolute bottom-6 right-6">
-                                <div className={`w-8 h-8 rounded-full flex items-center justify-center ${card.dark ? 'bg-[#2BE028]' : 'bg-gray-900'}`}>
-                                    <FaCircleCheck size={18} className="text-white" />
+                                <div className="w-8 h-8 rounded-full flex items-center justify-center">
+                                    { card.dark ? (
+                                        <img src={GreenIcon} alt="" />
+                                    ) : (
+                                        <img src={BlackIcon} alt="" />
+                                    ) }
+                                 
                                 </div>
                             </div>
                         </motion.div>

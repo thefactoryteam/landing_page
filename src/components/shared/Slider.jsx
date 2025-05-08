@@ -4,7 +4,7 @@ import FactoryLogo from '../../assets/FactoryLogoWhite.png'
 
 const Slider = () => {
   return (
-    <div className="bg-black py-10">
+    <div className="bg-black py-5">
       <Marquee
         speed={30}
         gradient={false}

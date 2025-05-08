@@ -43,11 +43,11 @@ const BeneftsComponent = ({ benefits, colouredEllipse = false }) => {
                 >
                     <div className='flex-shrink-0'>
                         <div className='p-2 rounded-full'>
-                            <img src={colouredEllipse ? EllipseShape2 : EllipseShape} alt="" className='h-8 w-8' loading="lazy" />
+                            <img src={colouredEllipse ? EllipseShape2 : EllipseShape} alt="" className='h-5 md:h-8 w-5 md:w-8' loading="lazy" />
                         </div>
                     </div>
                     <div>
-                        <p className='text-2xl text-[#231F20]'>
+                        <p className='text-[17px] md:text-2xl text-[#231F20]'>
                             {benefit}
                         </p>
                     </div>

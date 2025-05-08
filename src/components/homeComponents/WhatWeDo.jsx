@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Img1 from "../../assets/home/Group 63.png";
 import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
 import ButtonComponent from "../shared/ButtonComponent";
+import { Link } from "react-router";
 
 const textVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -94,40 +95,14 @@ const WhatWeDo = () => {
                             </motion.p>
 
                             {/* Learn more button */}
-                            <ButtonComponent
-                                text="Learn More"
-                            />
+                            <Link to="/jukebox" >
+                                <ButtonComponent
+                                    text="Learn More"
+                                />
+                            </Link>
+
 
                         </motion.div>
-
-                        {/* Section 2 - Co-Working Space */}
-                        <motion.div initial="hidden" whileInView="visible" exit="exit" variants={textVariants}>
-                            <motion.h2 className="text-2xl md:text-5xl font-extralight" variants={textVariants}>
-                                The Co-Working Space
-                            </motion.h2>
-                            <motion.p className="text-[17px] md:text-3xl font-bold leading-normal md:leading-tight py-3 md:py-7" variants={textVariants}>
-                                Welcome to your Productivity Oasis.
-                            </motion.p>
-                            <motion.p className="text-[17px] md:text-xl text-gray-900 leading-normal md:leading-tight" variants={textVariants}>
-                                Experience a peaceful workspace away from city distractions. Our co-working space combines comfort with productivity, perfect for professionals who need a focused environment to do their best work.
-                            </motion.p>
-                            <motion.p className="text-[17px] md:text-2xl text-gray-900 font-bold py-5" variants={textVariants}>
-                                Surrounded by scenic views and natural light, our space creates an inspiring atmosphere that nurtures creativity and deep work.
-                            </motion.p>
-                            <motion.div className="flex text-sm md:text-lg font-medium" variants={textVariants}>
-                                <RiDoubleQuotesL className="text-[#2BE028] text-lg" />
-                                <motion.p className="italic">Yes, we're located just outside the city – and that's by design.</motion.p>
-                                <RiDoubleQuotesR className="text-[#2BE028] text-lg" />
-                            </motion.div>
-
-                            {/* Learn more button */}
-
-                            <ButtonComponent
-                                text="Learn More"
-                            />
-
-                        </motion.div>
-
                         {/* Section 3 - Bootcamps & Training */}
                         <motion.div initial="hidden" whileInView="visible" exit="exit" variants={textVariants}>
                             <motion.h2 className="text-2xl md:text-5xl font-extralight" variants={textVariants}>
@@ -161,11 +136,44 @@ const WhatWeDo = () => {
 
                             {/* Learn more button */}
 
-                            <ButtonComponent 
+                            <ButtonComponent
                                 text="Learn More"
                             />
 
                         </motion.div>
+
+                        {/* Section 2 - Co-Working Space */}
+                        <motion.div initial="hidden" whileInView="visible" exit="exit" variants={textVariants}>
+                            <motion.h2 className="text-2xl md:text-5xl font-extralight" variants={textVariants}>
+                                The Co-Working Space
+                            </motion.h2>
+                            <motion.p className="text-[17px] md:text-3xl font-bold leading-normal md:leading-tight py-3 md:py-7" variants={textVariants}>
+                                Welcome to your Productivity Oasis.
+                            </motion.p>
+                            <motion.p className="text-[17px] md:text-xl text-gray-900 leading-normal md:leading-tight" variants={textVariants}>
+                                Experience a peaceful workspace away from city distractions. Our co-working space combines comfort with productivity, perfect for professionals who need a focused environment to do their best work.
+                            </motion.p>
+                            <motion.p className="text-[17px] md:text-2xl text-gray-900 font-bold py-5" variants={textVariants}>
+                                Surrounded by scenic views and natural light, our space creates an inspiring atmosphere that nurtures creativity and deep work.
+                            </motion.p>
+                            <motion.div className="flex text-sm md:text-lg font-medium" variants={textVariants}>
+                                <RiDoubleQuotesL className="text-[#2BE028] text-lg" />
+                                <motion.p className="italic">Yes, we're located just outside the city – and that's by design.</motion.p>
+                                <RiDoubleQuotesR className="text-[#2BE028] text-lg" />
+                            </motion.div>
+
+                            {/* Learn more button */}
+
+                            <Link to="/co-working-space">
+                                <ButtonComponent
+                                    text="Learn More"
+                                />
+                            </Link>
+
+
+                        </motion.div>
+
+
                     </motion.div>
                 </div>
             </motion.div>

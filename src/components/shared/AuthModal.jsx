@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import React, { useEffect, useState } from 'react'
 import SignUp from './SignUp'
 import Login from './Login'
+import Newsletter from './Newsletter'
 
 const AuthModal = ({ isOpen, setIsOpen }) => {
   const [isSignUp, setIsSignUp] = useState(true)
@@ -42,8 +43,11 @@ const AuthModal = ({ isOpen, setIsOpen }) => {
                     exit={{ opacity: 0, x: 40 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <SignUp
+                    {/* <SignUp
                       toggleForm={() => setIsSignUp(false)}
+                      closeModal={() => setIsOpen(false)}
+                    /> */}
+                    <Newsletter 
                       closeModal={() => setIsOpen(false)}
                     />
                   </motion.div>

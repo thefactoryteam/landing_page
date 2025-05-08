@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import ClipImage from "../../assets/home/madagascar-image.png";
 import BlackMarker from "../../assets/home/Black-marker-arrow.png";
 import BlackArrow from "../../assets/home/Black-arrow.png";
+import { Link } from "react-router";
 
 const words = ["Africa", "Naija"];
 
@@ -43,7 +44,7 @@ const Hero = () => {
 
         <div className="relative md:text-center px-12 md:px-0 mt-10 md:mt-0">
           <motion.h1
-            className="primary-font font-black uppercase text-6xl md:text-[100px] md:text-center leading-[1]"
+            className="primary-font font-black uppercase text-6xl md:text-[100px] md:text-center leading-[1] hero_h1"
             initial="hidden"
             animate="visible"
             variants={{
@@ -86,7 +87,7 @@ const Hero = () => {
           </motion.h1>
 
           <motion.p
-            className="text-center text-lg md:text-[36px] font-bold mt-5 md:mt-0 lowercase text-[#2BE028] meriwether-font italic"
+            className="text-center text-lg md:text-[36px] font-bold mt-5 md:mt-0 lowercase text-[#2BE028] meriwether-font italic hero_p"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
@@ -110,13 +111,17 @@ const Hero = () => {
               Become a global talent
             </motion.button>
 
-            <motion.button
-              className="bg-[#231F20] text-[#ECFBEB] font-semibold py-4 px-6 rounded-full text-sm md:text-lg cursor-pointer"
-              whileHover={{ scale: 1.1, boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.3)" }}
-              transition={{ type: "spring", stiffness: 200 }}
-            >
-              Join Jukebox Incubator Program
-            </motion.button>
+            <Link to="/jukebox" className="">
+              <motion.button
+                className="bg-[#231F20] text-[#ECFBEB] font-semibold py-4 w-full px-6 rounded-full text-sm md:text-lg cursor-pointer"
+                whileHover={{ scale: 1.1, boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.3)" }}
+                transition={{ type: "spring", stiffness: 200 }}
+              >
+                Join Jukebox Incubator Program
+              </motion.button>
+            </Link>
+
+
           </div>
 
           <motion.div

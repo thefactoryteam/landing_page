@@ -10,7 +10,7 @@ const OurVision = () => {
 
   return (
     <section className='bg-[#F4F4F4]'>
-      <div className="relative max-w-6xl mx-auto py-20 text-center px-4 overflow-hidden">
+      <div className="relative max-w-6xl mx-auto py-0 md:py-20 text-center px-4 overflow-hidden">
 
         <SectionHeaders 
           title="Our Vision"

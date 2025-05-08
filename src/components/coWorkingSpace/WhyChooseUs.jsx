@@ -2,25 +2,27 @@ import { FaMapMarkerAlt, FaUsers } from 'react-icons/fa';
 // import FeatureCard from './FeatureCard';
 import img1 from '../../assets/coworking/tinapaimage.png';
 import img2 from '../../assets/coworking/festus.png';
+import img3 from '../../assets/coworking/people.png';
 import locationIcon from '../../assets/coworking/locationvector.png'
 import networkIcon from '../../assets/coworking/networkvector.png'
+import flexibilityIcon from '../../assets/coworking/flexibiliyIcon.png'
 import SectionHeaders from '../shared/SectionHeaders';
 import { FadeInUp } from '../../utils/animations';
 
 
-const FeatureCard = ({ icon, title, text, image }) => {
+const FeatureCard = ({ icon, title, text, image, descHeight="h-72" }) => {
     return (
         <div className=" ">
-            <div className="p-6 flex flex-col gap-4 border border-dashed border-[#231F20] border-b-0 rounded-t-xl">
+            <div className={`p-10 ${descHeight} flex flex-col gap-4 border border-dashed border-[#231F20] border-b-0 rounded-t-xl`}>
                 {/* Icon */}
                 <div className="w-8 h-8">
                     <img src={icon} alt="" />
                 </div>
 
                 {/* Title + Description */}
-                <div>
-                    <h3 className="text-black font-extrabold text-xl leading-tight">{title}</h3>
-                    <p className="text-gray-600 text-sm mt-2 leading-relaxed">{text}</p>
+                <div className='max-w-xs'>
+                    <h3 className="text-black font-extrabold text-2xl leading-tight">{title}</h3>
+                    <p className="text-gray-600 text-xl mt-2 leading-relaxed">{text}</p>
                 </div>
             </div>
 
@@ -36,15 +38,13 @@ const FeatureCard = ({ icon, title, text, image }) => {
     );
 };
 
-// export default FeatureCard;
-
 
 const WhyChooseUs = () => {
     return (
         <section className="p-8 md:p-16 primary-font">
             <div className='max-w-5xl mx-auto'>
 
-            <div className='text-center mb-12'>
+                <div className='text-center mb-12'>
                     <SectionHeaders
                         title="Why Choose Us?"
                         desc=""
@@ -52,22 +52,30 @@ const WhyChooseUs = () => {
                     />
                 </div>
 
-                <div className='flex gap-10'>
-                <FeatureCard
-                    icon={locationIcon}
-                    title="Prime Location"
-                    text="Strategically Located In Tinapa, Cross River State, Offering Free Trade Zone Advantages."
-                    image={img1}
-                />
-                <FeatureCard
-                    icon={networkIcon}
-                    title="Networking Opportunities"
-                    text="Be Part Of A Vibrant Community Of Tech Enthusiasts, Startups, And Established Businesses."
-                    image={img2}
-                />
+                <div className='flex gap-10 mb-20'>
+                    <FeatureCard
+                        icon={locationIcon}
+                        title="Prime Location"
+                        text="Strategically Located In Tinapa, Cross River State, Offering Free Trade Zone Advantages."
+                        image={img1}
+                    />
+                    <FeatureCard
+                        icon={networkIcon}
+                        title="Networking Opportunities"
+                        text="Be Part Of A Vibrant Community Of Tech Enthusiasts, Startups, And Established Businesses."
+                        image={img2}
+                    />
                 </div>
 
-                
+                <FeatureCard
+                        icon={flexibilityIcon}
+                        title="Flexibility & Scalability"
+                        text="Packages designed to grow with your needs."
+                        image={img3}
+                        descHeight="h-60"
+                    />
+
+
             </div>
 
         </section>
