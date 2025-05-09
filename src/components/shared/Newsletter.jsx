@@ -20,14 +20,19 @@ export default function Newsletter({ closeModal }) {
                         <FormInput name="name" type="text" placeholder="Name" />
                         <FormInput name="email" type="email" placeholder="Email Address" />
 
-                        <div className="mt-6 space-y-4 sm:space-y-0 sm:flex sm:justify-end sm:gap-4">
+                        <div className="mt-6 text-center">
+                            
                             <button
-                                type="button"
+                                type="submit"
                                 onClick={closeModal}
-                                className="w-full sm:w-auto justify-center inline-flex items-center cursor-pointer gap-2 rounded-full bg-[#231F20] px-8 py-2 text-lg font-semibold text-white hover:bg-gray-900"
+                                className="w-full sm:w-auto justify-center inline-flexd items-center cursor-pointer gap-2 rounded-full bg-[#231F20] px-8 py-2 text-lg font-semibold text-white hover:bg-gray-900"
                             >
-                                Subscribe
+                                Join the Factory
                             </button>
+                            <p className="text-xs text-center text-gray-400 mt-2">
+                                No spam. Just real opportunities.
+                            </p>
+
 
                         </div>
                     </form>

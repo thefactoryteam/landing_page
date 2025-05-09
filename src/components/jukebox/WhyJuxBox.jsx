@@ -19,7 +19,7 @@ const WhyCard = ({ number, title, para, customClass="" }) => {
 const WhyJuxBox = () => {
     return (
         <section className="bg-black text-white p-8 md:p-16 primary-font">
-            <div className="max-w-6xl mx-auto mt-24">
+            <div className="max-w-6xl mx-auto md:mt-24">
                 {/* Header Section */}
                 <div className="mb-16 flex flex-col md:flex-row justify-between">
                     <h2 className="text-4xl md:text-6xl font-bold mb-4 leading-14 md:leading-20">

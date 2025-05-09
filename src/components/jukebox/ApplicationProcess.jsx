@@ -3,6 +3,10 @@ import { TiArrowForward } from "react-icons/ti";
 import Grid from '../../assets/Grid.png'
 import { BiSolidPencil } from "react-icons/bi";
 import ButtonComponent from '../shared/ButtonComponent';
+import Box1 from '../../assets/Jukebox/box1.png'
+import Box2 from '../../assets/Jukebox/box2.png'
+import Box3 from '../../assets/Jukebox/box3.png'
+import Box4 from '../../assets/Jukebox/box4.png'
 
 
 const steps = [
@@ -10,25 +14,29 @@ const steps = [
         title: "Step One",
         label: "Online Submission",
         description: "Apply via {Link Here}",
-        arrow: "left"
+        arrow: "left",
+        bg: Box1
     },
     {
         title: "Step Two",
         label: "Screening",
         description: "Our team evaluates applications based on the set criteria.",
-        arrow: "right"
+        arrow: "right",
+        bg: Box3
     },
     {
         title: "Step Three",
         label: "Interviews",
         description: "Shortlisted startups will participate in an interview to discuss their vision and progress.",
-        arrow: "left"
+        arrow: "left",
+        bg: Box2
     },
     {
         title: "Step Four",
         label: "Final Selection",
         description: "The top 12 startups will be chosen and notified.",
-        arrow: "right"
+        arrow: "right",
+        bg: Box4
     }
 ];
 
@@ -73,7 +81,7 @@ const ApplicationProcess = () => {
                 ))}
 
                 <div className='text-center mt-20'>
-                    <p className='text-4xl'>Ready to take your startup to the <b>next level?</b> </p>
+                    <p className='text-2xl md:text-4xl'>Ready to take your startup to the <b>next level?</b> </p>
                 </div>
 
                 <div className='flex justify-center'>
@@ -81,7 +89,6 @@ const ApplicationProcess = () => {
                         text="Apply Now"
                     />
                 </div>
-
             </div>
         </section>
     );

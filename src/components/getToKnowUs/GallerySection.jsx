@@ -73,7 +73,7 @@ const GallerySection = () => {
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 1.2, ease: 'easeOut' }}
                         >
-                            <div className='md:h-[390px]'>
+                            <div className='md:h-[39d0px]'>
                                 <img src={Factory} alt="The factory learners" className='w-full h-full' />
                             </div>
                         </motion.div>

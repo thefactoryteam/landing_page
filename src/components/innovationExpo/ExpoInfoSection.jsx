@@ -92,7 +92,7 @@ const ExpoInfoSection = () => {
                     {valueCards.map((card, index) => (
                         <motion.div
                             key={index}
-                            className={`relative rounded-lg overflow-hidden h-80 p-6 border  ${card.dark
+                            className={`relative rounded-lg overflow-hidden h-96 p-6 border  ${card.dark
                                 ? 'bg-[#231F20] text-white '
                                 : 'bg-[#F4F4F4] text-gray-900 border-[#231F20] border-dashed'
                                 }`}
@@ -107,11 +107,11 @@ const ExpoInfoSection = () => {
 
                             
                             <div className="absolute bottom-6 right-6">
-                                <div className="w-8 h-8 rounded-full flex items-center justify-center">
+                                <div className="rounded-full flex items-center justify-center">
                                     { card.dark ? (
-                                        <img src={GreenIcon} alt="" />
+                                        <img src={GreenIcon} alt="" className='h-16'/>
                                     ) : (
-                                        <img src={BlackIcon} alt="" />
+                                        <img src={BlackIcon} alt="" className='h-16'/>
                                     ) }
                                  
                                 </div>
