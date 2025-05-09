@@ -15,19 +15,19 @@ const FeatureCard = ({ icon, title, text, image, descHeight="h-72" }) => {
         <div className=" ">
             <div className={`p-10 ${descHeight} flex flex-col gap-4 border border-dashed border-[#231F20] border-b-0 rounded-t-xl`}>
                 {/* Icon */}
-                <div className="w-8 h-8">
+                <div className="w-5 md:w-8 h-5 md:h-8">
                     <img src={icon} alt="" />
                 </div>
 
                 {/* Title + Description */}
                 <div className='max-w-xs'>
-                    <h3 className="text-black font-extrabold text-2xl leading-tight">{title}</h3>
-                    <p className="text-gray-600 text-xl mt-2 leading-relaxed">{text}</p>
+                    <h3 className="text-black font-extrabold text-xl md:text-2xl leading-tight">{title}</h3>
+                    <p className="text-gray-600 text-[17px] md:text-xl mt-2 leading-relaxed">{text}</p>
                 </div>
             </div>
 
             {/* Image */}
-            <div className="h-[363px] w-full border border-dashed border-[#231F20] border-t-0 rounded-b-xl">
+            <div className="md:h-[363px] w-full border border-dashed border-[#231F20] border-t-0 rounded-b-xl">
                 <img
                     src={image}
                     alt={title}
@@ -52,7 +52,7 @@ const WhyChooseUs = () => {
                     />
                 </div>
 
-                <div className='flex gap-10 mb-20'>
+                <div className='flex flex-col md:flex-row gap-10 mb-20'>
                     <FeatureCard
                         icon={locationIcon}
                         title="Prime Location"

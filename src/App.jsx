@@ -9,7 +9,7 @@ import AppRoutes from './components/AppRoutes'
 function App() {
 
   return (
-    <div className='bg-[#F4F4F4] overflow-hidde'>
+    <div className='bg-[#FBFBFB] overflow-hidde'>
       <BrowserRouter>
         <NeonCursor />
         <AppRoutes />

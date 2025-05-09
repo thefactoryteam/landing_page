@@ -9,7 +9,7 @@ import { IoIosArrowForward } from "react-icons/io";
 const HeaderSpacer = ({ isScrolled }) => {
   return (
     <div 
-      className={`w-full transition-all duration-300 ease-in-out ${isScrolled ? "h-14 md:h-14" : "h-16 md:h-20"}`}
+      className={`w-full transition-all duration-300 ease-in-out ${isScrolled ? "h-14 md:h-14" : "h-[90px] md:h-20"}`}
     ></div>
   );
 };
@@ -340,13 +340,13 @@ const Header = ({bgScroll="bg-white/60 border-b border-gray-200", bg="bg-transpa
           />
         </div>
 
-        {/* Right Side - Sign Up Button */}
+        {/* Right Side - Subscribe Button */}
         <div className="basis-1/3 md:basis-1/4 text-end">
           <button
-            className={`rounded-full bg-[#231F20] text-[#ECFBEB] px-6 py-2 cursor-pointer shadow-lg ${!headerSpacer ? "border-2 border-[#FBFBFB]" : "" }`}
+            className={`rounded-full bg-[#231F20] text-[#ECFBEB] font-semibold px-4 md:px-6 py-2 text-sm md:text-base cursor-pointer shadow-lg ${!headerSpacer ? "border-2 border-[#FBFBFB]" : "" }`}
             onClick={() => setIsSignUpOpen(true)}
           >
-            Subscribe
+            Join the Factory
           </button>
         </div>
       </div>
