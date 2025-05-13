@@ -24,7 +24,7 @@ const menu = [
     submenu: [
       { href: "/jukebox", text: "Jukebox" },
       { href: "/co-working-space", text: "Co-Working Space" },
-      { href: "#", text: "Bootcamps & Training" },
+      { href: "/bootcamps-and-training", text: "Bootcamps & Training" },
     ]
   },
   { href: "#learning-and-resources", text: "Learning & Resources" },

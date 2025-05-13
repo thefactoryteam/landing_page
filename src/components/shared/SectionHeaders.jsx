@@ -9,7 +9,7 @@ const SectionHeaders = ({ title, desc, fadeInUp, maxWidth= "max-w-2xl" }) => {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="meriwether-font text-2xl md:text-4xl !font-semibold mb-4 relative z-10"
+                className="meriwether-font text-2xl md:text-4xl !font-bold mb-4 relative z-10"
             >
                 {title}
             </motion.h2>
