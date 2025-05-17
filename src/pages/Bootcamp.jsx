@@ -6,6 +6,9 @@ import Hero from '../components/Bootcamp/Hero';
 import Slider from '../components/shared/Slider';
 import SkillsTrack from '../components/Bootcamp/SkillsTrack';
 import SectionSpacer from '../components/shared/SectionSpacer';
+import DiplomaProgram from '../components/Bootcamp/DiplomaProgram';
+import ProfessionalDiploma from '../components/Bootcamp/ProfessionalDiploma';
+import Footer from '../components/shared/Footer';
 
 const Bootcamp = () => {
   return (
@@ -18,6 +21,9 @@ const Bootcamp = () => {
         <Slider />
         <SectionSpacer />
         <SkillsTrack />
+        <DiplomaProgram />
+        <ProfessionalDiploma />
+        <Footer />
     </div>
   )
 }

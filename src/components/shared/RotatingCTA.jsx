@@ -1,44 +1,90 @@
-import React from "react";
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { FaArrowUp } from "react-icons/fa6";
 
+export default function CircularButton() {
+  const [arrowDirection, setArrowDirection] = useState('up');
+  const [isRotating, setIsRotating] = useState(true);
+  
+  // Toggle arrow direction every 3 seconds
+  useEffect(() => {
+    if (!isRotating) return;
+    
+    const interval = setInterval(() => {
+      setArrowDirection(prev => prev === 'up' ? 'down' : 'up');
+    }, 3000);
+    
+    return () => clearInterval(interval);
+  }, [isRotating]);
+  
+  const toggleRotation = () => {
+    setIsRotating(prev => !prev);
+  };
 
-const RotatingCTA = () => {
   return (
-    <div className="relative w-[90px] h-[90px]">
-      {/* Rotating Circular Text */}
-      <div className="absolute inset-0 animate-spin">
-        <svg viewBox="0 0 100 100" className="w-full h-full">
-          <defs>
-            <path
-              id="textCircle"
-              d="M 50, 50
-                 m -45, 0
-                 a 45,45 0 1,1 90,0
-                 a 45,45 0 1,1 -90,0"
-              fill="none"
-            />
-          </defs>
-          <text
-            fill="#10FF46"
-            fontSize="8"
-            fontWeight="bold"
-            letterSpacing="1"
+    <div className="flex flex-col items-center justify-center ">
+      <div 
+        className="relative w-40 h-40 bg-[#2BE028] rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow"
+      >
+        {/* Circular text container */}
+        <motion.div 
+          className="absolute w-full h-full"
+          animate={{ 
+            rotate: arrowDirection === 'up' ? 360 : -360 
+          }}
+          initial={false}
+          transition={{ 
+            duration: 8,
+            ease: "linear",
+            repeat: Infinity,
+            repeatType: "loop",
+            direction: arrowDirection === 'up' ? 'normal' : 'reverse'
+          }}
+        >
+          {/* Text path - using SVG for perfect circular text */}
+          <svg className="w-full h-full" viewBox="0 0 200 200">
+            <defs>
+              <path 
+                id="textCirclePath" 
+                d="M 100, 100 m -70, 0 a 70,70 0 1,1 140,0 a 70,70 0 1,1 -140,0"
+                fill="transparent"
+              />
+            </defs>
+            
+            <text fill="white" fontSize="12" fontWeight="bold" letterSpacing="1">
+              <textPath xlinkHref="#textCirclePath" startOffset="0%">
+                get started · get started · get started ·  get started .
+              </textPath>
+            </text>
+          </svg>
+        </motion.div>
+        
+        {/* The arrow */}
+        <motion.div 
+          className="w-8 h-8 text-white"
+          animate={{ 
+            rotate: arrowDirection === 'up' ? 0 : 180 
+          }}
+          transition={{ 
+            duration: 0.5,
+            ease: "easeInOut"
+          }}
+        >
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            viewBox="0 0 24 24" 
+            fill="none" 
+            stroke="currentColor" 
+            strokeWidth="3" 
+            strokeLinecap="round" 
+            strokeLinejoin="round"
           >
-            <textPath href="#textCircle" startOffset="0%">
-              Get Started · Get Started · Get Started · Get Started ·
-            </textPath>
-          </text>
-        </svg>
+            <line x1="12" y1="19" x2="12" y2="5" />
+            <polyline points="5 12 12 5 19 12" />
+          </svg>
+        </motion.div>
       </div>
-
-      {/* Center Static Icon */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="w-10 h-10 bg-[#10FF46] rounded-full flex items-center justify-center">
-          <FaArrowUp className="text-black text-sm" />
-        </div>
-      </div>
+      
     </div>
   );
-};
-
-export default RotatingCTA;
+}

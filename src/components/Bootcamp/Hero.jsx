@@ -2,14 +2,16 @@ import React from "react";
 import Grid from '../../assets/Grid.png'
 import Okod from '../../assets/bootcamp/okod.png'
 import RotatingCTA from "../shared/RotatingCTA";
+import CircularButton from "../../assets/frame.gif";
+
 
 const HeroSection = () => {
     return (
-        <section className="min-h-screen flex items-center justify-center px-4 py-1i2" style={{ backgroundImage: `url(${Grid})` }}>
+        <section className="min-h-screen flex items-center justify-center px-4 py-1e2" style={{ backgroundImage: `url(${Grid})` }}>
             <div className="relative max-w-7xl w-full py-20">
                 <div className="bg-black flex flex-col md:flex-row rounded-[2rem] overflow-hiddden  shadow-md">
                     {/* Left Side - Text */}
-                    <div className=" text-white flex flex-col justify-center py-8 px-8 md:px-25 md:py-12  flex-1">
+                    <div className=" text-white flex flex-col justify-center py-10 px-8 md:px-25 md:py-20  flex-1">
                         <h1 className="text-4xl md:text-5xl font-bold leading-tight">
                             LAUNCH YOUR <br />
                             TECH CAREER <br />
@@ -25,19 +27,24 @@ const HeroSection = () => {
                     </div>
 
                     {/* Right Side - Image with CTA */}
-                    <div className="absolute right-30 top-5 flex-1">
-                        <img
-                            src={Okod}
-                            alt="Tech students"
-                            className="w-[390px] object-cover"
-                        />
+                    
 
-                        {/* Green CTA Button */}
-                        
-                    </div>
-                    <div className="absolute bottom-32 right-10 w-28 h-28  rounded-full flex items-center justify-center">
-                           <RotatingCTA />
+                    {/* Right Side - Image with Overlay */}
+                    <div className="relative flex-1 flex justify-center items-center">
+                        <div className="absolute w-[430px] h-auto right-20">
+                            {/* Dark Overlay */}
+                            <div className="absolute inset-0 bg-black opacity-50 rounded-lg z-10"></div>
+                            <img
+                                src={Okod}
+                                alt="Tech students"
+                                className="w-full h-full object-cover rounded-lg z-0 scale-y-1d25"
+                            />
                         </div>
+                    </div>
+                    
+                    <div className="absolute bottom-30 right-10 w-28 h-28 z-10 rounded-full flex items-center justify-center">
+                       <img src={CircularButton} alt="" />
+                    </div>
                 </div>
             </div>
 
@@ -46,3 +53,5 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
+
