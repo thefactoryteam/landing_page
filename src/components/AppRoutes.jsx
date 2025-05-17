@@ -5,6 +5,8 @@ import GetToKnowUs from '../pages/GetToKnowUs'
 import InnnovationExpo from '../pages/InnnovationExpo'
 import Jukebox from '../pages/Jukebox'
 import CoWorkingSpace from '../pages/CoWorkingSpace'
+import Bootcamp from '../pages/Bootcamp'
+import { ToastContainer } from 'react-toastify'
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -28,7 +30,9 @@ const AppRoutes = () => {
             <Route path='/innovation-expo' element={<InnnovationExpo />} />
             <Route path='/jukebox' element={<Jukebox />} />
             <Route path='/co-working-space' element={<CoWorkingSpace />} />
+            <Route path='/bootcamps-and-training' element={<Bootcamp />} />
         </Routes>
+        <ToastContainer />
     </div>
   )
 }

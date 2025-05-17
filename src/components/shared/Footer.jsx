@@ -87,8 +87,8 @@ const footerMenu = [
 
 const Footer = () => {
     return (
-        <section className='bg-[#F4F4F4]'>
-            <div className='pt-40 md:w-4/5 mx-auto'>
+        <section className=''>
+            <div className='pt-20 md:w-4/5 mx-auto'>
                 <div className=" py-6 flex flex-col md:flex-row justify-between text-sm ">
                     <div className='flex flex-col md:flex-row gap-20'>
                         <div className='flex justify-center'>
