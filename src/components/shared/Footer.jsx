@@ -130,7 +130,7 @@ const Footer = () => {
                     <p>Copyright © 2024 - Present The Factory®. All rights reserved.</p>
                     <div className="flex justify-center gap-5">
                         <a href="#" className="hover:underline">Privacy Policy</a>
-                        <a href="#" className="hover:underline">Terms & Conditions</a>
+                        <Link to="/terms-of-service" className="hover:underline">Terms & Conditions</Link>
                     </div>
                 </div>
             </div>
