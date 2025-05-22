@@ -56,7 +56,7 @@ const WhyChooseUs = () => {
                     <FeatureCard
                         icon={locationIcon}
                         title="Prime Location"
-                        text="Strategically Located In Tinapa, Cross River State, Offering Free Trade Zone Advantages."
+                        text="Strategically located in Tinapa Free Trade Zone, Calabar, Cross River State."
                         image={img1}
                     />
                     <FeatureCard

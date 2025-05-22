@@ -11,7 +11,7 @@ function App() {
   return (
     <div className='bg-[#FBFBFB] overflow-hidde'>
       <BrowserRouter>
-        <NeonCursor />
+        {/* <NeonCursor /> */}
         <AppRoutes />
         <ScrollToTopButton />
       </BrowserRouter>

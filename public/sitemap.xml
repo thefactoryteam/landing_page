@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://techfactory.xyz/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://techfactory.xyz/get-to-know-us</loc>
+  </url>
+  <url>
+    <loc>https://techfactory.xyz/innovation-expo</loc>
+  </url>
+  <url>
+    <loc>https://techfactory.xyz/jukebox</loc>
+  </url>
+  <url>
+    <loc>https://techfactory.xyz/co-working-space</loc>
+  </url>
+  <url>
+    <loc>https://techfactory.xyz/bootcamps-and-training</loc>
+  </url>
+  <url>
+    <loc><url>
+    <loc>https://techfactory.xyz/bootcamps-and-training</loc>
+  </url></loc>
+  </url>
+</urlset>

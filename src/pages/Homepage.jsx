@@ -26,7 +26,7 @@ const Homepage = () => {
         <WhatWeDo />
         <OurInnovators />
         {/* <VideoPlayerSection /> */}
-        <PartnerSection />
+        {/* <PartnerSection /> */}
         <Footer />
       </div>
 
