@@ -23,7 +23,7 @@ const InnnovationExpo = () => {
         <Hero />
         <Slider />
         <ExpoInfoSection />
-        <OurPartners />
+        {/* <OurPartners /> */}
         <WhyPartnerWithUS />
         <Sponsor />
         <ImpactMetrics />

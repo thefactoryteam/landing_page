@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Img1 from "../../assets/home/Group 63.png";
+import Img1 from "../../assets/home/sobe2.png";
 import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
 import ButtonComponent from "../shared/ButtonComponent";
 import { Link } from "react-router";

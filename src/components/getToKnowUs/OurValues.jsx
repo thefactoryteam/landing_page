@@ -417,7 +417,7 @@ const OurValues = () => {
         <div className='text-center'>
           <SectionHeaders
             title="Our Values"
-            desc="Empowering Africa Through Innovation, Opportunity, and Excellence"
+            desc="Empowering progress through innovation, opportunity, and excellence."
             fadeInUp={FadeInUp}
           />
         </div>

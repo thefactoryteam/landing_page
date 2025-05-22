@@ -11,7 +11,7 @@ const OurMission = () => {
         
                 <SectionHeaders 
                   title="Our mission"
-                  desc="Our mission is to ignite Africa's Tech revolution by empowering the continent's most promising minds and fostering a collaborative ecosystem for innovation and growth."
+                  desc="Building a connected world through innovation, collaboration, and impact by empowering exceptional talent."
                   fadeInUp={FadeInUp}
                 />
               </div>

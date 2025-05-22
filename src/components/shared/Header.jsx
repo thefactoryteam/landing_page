@@ -4,12 +4,13 @@ import { useNavigate, useLocation } from "react-router";
 import AuthModal from "./AuthModal";
 import { motion, AnimatePresence } from 'framer-motion';
 import { IoIosArrowForward } from "react-icons/io";
+import Navbar from "./MobileMenu";
 
 // HeaderSpacer component to prevent content overlap
 const HeaderSpacer = ({ isScrolled }) => {
   return (
     <div 
-      className={`w-full transition-all duration-300 ease-in-out ${isScrolled ? "h-14 md:h-14" : "h-[90px] md:h-20"}`}
+      className={`w-full transition-all hikdden md:bljock duration-300 ease-in-out ${isScrolled ? "h-14 md:h-14" : "h-[90px] md:h-20"}`}
     ></div>
   );
 };
@@ -27,8 +28,9 @@ const menu = [
       { href: "/bootcamps-and-training", text: "Bootcamps & Training" },
     ]
   },
-  { href: "#learning-and-resources", text: "Learning & Resources" },
-  { href: "#Courses", text: "Courses" },
+  // { href: "#learning-and-resources", text: "Learning & Resources" },
+  // { href: "#Courses", text: "Courses" },
+  { href: "/contact", text: "Contact Us" },
 ];
 
 const Header = ({bgScroll="bg-white/60 border-b border-gray-200", bg="bg-transparent", headerSpacer=true, bigScreenlogo, smallScreenLogo }) => {
@@ -214,8 +216,9 @@ const Header = ({bgScroll="bg-white/60 border-b border-gray-200", bg="bg-transpa
 
   return (
     <>
+      {/* Desktop Menu */}
       <header className={`
-        fixed w-full top-0 left-0 right-0 z-50 transition-all duration-300
+        fixed w-full  top-0 left-0 right-0 z-50 transition-all duration-300
         ${isScrolled
           ? `backdrop-blur-md ${bgScroll}`
           : `${bg} border-transparent`}
@@ -346,7 +349,7 @@ const Header = ({bgScroll="bg-white/60 border-b border-gray-200", bg="bg-transpa
             className={`rounded-full bg-[#231F20] text-[#ECFBEB] font-semibold px-4 md:px-6 py-2 text-sm md:text-base cursor-pointer shadow-lg ${!headerSpacer ? "border-2 border-[#FBFBFB]" : "" }`}
             onClick={() => setIsSignUpOpen(true)}
           >
-            Join the Factory
+            Subscribe
           </button>
         </div>
       </div>
@@ -354,8 +357,14 @@ const Header = ({bgScroll="bg-white/60 border-b border-gray-200", bg="bg-transpa
       {/* Sign-Up Modal */}
       <AuthModal isOpen={isSignUpOpen} setIsOpen={setIsSignUpOpen} />
     </header>
+
+                {/* Mobile Menu */}
+    {/* <header className="md:hidden">
+                <Navbar />
+    </header> */}
     
     {/* Add spacing to prevent content overlap */}
+   
     { headerSpacer && <HeaderSpacer isScrolled={isScrolled} />}
    
     </>
