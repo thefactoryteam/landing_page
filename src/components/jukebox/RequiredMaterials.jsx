@@ -10,7 +10,7 @@ const criteria = [
     {
         number: '2.',
         title: 'Product Demo',
-        description: 'A link to a live demo or video walkthrough.'
+        description: 'See Bottom for Demo Video example.'
     },
     {
         number: '3.',

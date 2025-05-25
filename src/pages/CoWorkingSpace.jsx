@@ -18,7 +18,9 @@ const CoWorkingSpace = () => {
         />
         <Hero />
         <Slider />
-        <WhyCoworkingSpace />
+        <WhyCoworkingSpace 
+          text="The Factory Co-Working Space is where innovation meets productivity. Experience a peaceful workspace away from city distractions. Explore our thoughtfully designed packages tailored to meet your diverse needs, whether you are a freelancer, a startup, or an established team."
+        />
         <OfferWorkspace />
         <WhyChooseUs />
         <Footer />

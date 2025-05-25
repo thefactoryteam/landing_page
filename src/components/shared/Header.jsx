@@ -4,36 +4,19 @@ import { useNavigate, useLocation } from "react-router";
 import AuthModal from "./AuthModal";
 import { motion, AnimatePresence } from 'framer-motion';
 import { IoIosArrowForward } from "react-icons/io";
-import Navbar from "./MobileMenu";
+import { menu } from "../../utils/menus";
+import MobileMenu from "./MobileMenu";
 
 // HeaderSpacer component to prevent content overlap
 const HeaderSpacer = ({ isScrolled }) => {
   return (
-    <div 
-      className={`w-full transition-all hikdden md:bljock duration-300 ease-in-out ${isScrolled ? "h-14 md:h-14" : "h-[90px] md:h-20"}`}
+    <div
+      className={`w-full transition-all duration-300 ease-in-out ${isScrolled ? "h-14 md:h-14" : "h-[90px] md:h-20"}`}
     ></div>
   );
 };
 
-const menu = [
-  { href: "/", text: "Home" },
-  { href: "/get-to-know-us", text: "Get To Know Us" },
-  { href: "/innovation-expo", text: "Innovation Expo" },
-  {
-    href: "#",
-    text: "Our Services",
-    submenu: [
-      { href: "/jukebox", text: "Jukebox" },
-      { href: "/co-working-space", text: "Co-Working Space" },
-      { href: "/bootcamps-and-training", text: "Bootcamps & Training" },
-    ]
-  },
-  // { href: "#learning-and-resources", text: "Learning & Resources" },
-  // { href: "#Courses", text: "Courses" },
-  { href: "/contact", text: "Contact Us" },
-];
-
-const Header = ({bgScroll="bg-white/60 border-b border-gray-200", bg="bg-transparent", headerSpacer=true, bigScreenlogo, smallScreenLogo }) => {
+const Header = ({ bgScroll = "bg-white/60 border-b border-gray-200", bg = "bg-transparent", headerSpacer = true, bigScreenlogo, smallScreenLogo, jukebox=false }) => {
   const location = useLocation();
   const [isSignUpOpen, setIsSignUpOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -47,11 +30,11 @@ const Header = ({bgScroll="bg-white/60 border-b border-gray-200", bg="bg-transpa
   // Initialize selectedItem based on current path
   const [selectedItem, setSelectedItem] = useState(() => {
     const path = location.pathname;
-    
+
     // Check main menu items
     const mainItem = menu.find(item => item.href === path);
     if (mainItem) return mainItem.text;
-    
+
     // Check submenu items
     for (const item of menu) {
       if (item.submenu) {
@@ -59,7 +42,7 @@ const Header = ({bgScroll="bg-white/60 border-b border-gray-200", bg="bg-transpa
         if (subItem) return subItem.text;
       }
     }
-    
+
     return "Home"; // Default
   });
 
@@ -89,14 +72,14 @@ const Header = ({bgScroll="bg-white/60 border-b border-gray-200", bg="bg-transpa
   // Handle path changes
   useEffect(() => {
     const path = location.pathname;
-    
+
     // Check main menu items
     const mainItem = menu.find(item => item.href === path);
     if (mainItem) {
       setSelectedItem(mainItem.text);
       return;
     }
-    
+
     // Check submenu items
     for (const item of menu) {
       if (item.submenu) {
@@ -112,7 +95,7 @@ const Header = ({bgScroll="bg-white/60 border-b border-gray-200", bg="bg-transpa
   const navigateTo = (href, itemText) => {
     // Close menu first
     setMenuOpen(false);
-    
+
     // Navigate immediately without updating selection text first
     // The selection will update automatically via the useEffect + useLocation
     if (href.startsWith("#")) {
@@ -152,16 +135,16 @@ const Header = ({bgScroll="bg-white/60 border-b border-gray-200", bg="bg-transpa
 
   // Animation variants for the main menu
   const menuVariants = {
-    hidden: { 
-      width: 0, 
-      height: 0, 
+    hidden: {
+      width: 0,
+      height: 0,
       opacity: 0,
       borderRadius: "50%",
       overflow: "hidden"
     },
-    visible: { 
-      width: "auto", 
-      height: "auto", 
+    visible: {
+      width: "auto",
+      height: "auto",
       opacity: 1,
       borderRadius: "0.75rem",
       overflow: "visible",
@@ -172,9 +155,9 @@ const Header = ({bgScroll="bg-white/60 border-b border-gray-200", bg="bg-transpa
         borderRadius: { duration: 0.4 }
       }
     },
-    exit: { 
-      width: 0, 
-      height: 0, 
+    exit: {
+      width: 0,
+      height: 0,
       opacity: 0,
       borderRadius: "50%",
       overflow: "hidden",
@@ -189,14 +172,14 @@ const Header = ({bgScroll="bg-white/60 border-b border-gray-200", bg="bg-transpa
 
   // Animation variants for the submenu
   const submenuVariants = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       scale: 0.8,
       x: -10,
       transformOrigin: "left center"
     },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       scale: 1,
       x: 0,
       transition: {
@@ -204,8 +187,8 @@ const Header = ({bgScroll="bg-white/60 border-b border-gray-200", bg="bg-transpa
         ease: "easeOut"
       }
     },
-    exit: { 
-      opacity: 0, 
+    exit: {
+      opacity: 0,
       scale: 0.8,
       x: -10,
       transition: {
@@ -223,150 +206,158 @@ const Header = ({bgScroll="bg-white/60 border-b border-gray-200", bg="bg-transpa
           ? `backdrop-blur-md ${bgScroll}`
           : `${bg} border-transparent`}
       `}>
+        <div className="hidden md:block">
+          <div className={`md:w-4/5 px-2 md:px-0 mx-auto flex flex-row items-center justify-between transition-all secondaryFont duration-300 ease-in-out ${isScrolled ? "py-3 md:py-3" : "py-4 md:py-6"}`}>
 
-        <div className={`md:w-4/5 px-2 md:px-0 mx-auto flex flex-row items-center justify-between transition-all secondaryFont duration-300 ease-in-out ${isScrolled ? "py-3 md:py-3" : "py-4 md:py-6"}`}>
-
-        <div className="basis-1/3 md:basis-1/4 relative">
-          <div className="relative inline-block text-left" ref={wrapperRef}>
-            <div className="relative inline-flex -top-5">
-              {/* Button */}
-              <Transition
-                show={!menuOpen}
-                as="div"
-                appear
-                enter="transition ease-out duration-300"
-                enterFrom="opacity-0 scale-95"
-                enterTo="opacity-100 scale-100"
-                leave="transition ease-in duration-200"
-                leaveFrom="opacity-100 scale-100"
-                leaveTo="opacity-0 scale-95"
-              >
-                <button
-                  onClick={() => setMenuOpen(true)}
-                  className={`absolute inline-flex items-center justify-center text-sm font-semibold cursor-pointer px-6 py-2 transition-all duration-300 text-left focus:outline-none rounded-full bg-[#231F20] shadow-lg text-[#2BE028] whitespace-nowrap ${!headerSpacer ? "border-2 border-[#FBFBFB]" : "" } `}
-                >
-                  {selectedItem}
-                </button>
-              </Transition>
-
-              {/* Menu */}
-              <AnimatePresence>
-                {menuOpen && (
-                  <motion.div
-                    initial="hidden"
-                    animate="visible"
-                    exit="exit"
-                    variants={menuVariants}
-                    className="absolute top-0 left-0 z-10 origin-top-left"
+            <div className="basis-1/3 md:basis-1/4 relative">
+              <div className="relative inline-block text-left" ref={wrapperRef}>
+                <div className="relative inline-flex -top-5">
+                  {/* Button */}
+                  <Transition
+                    show={!menuOpen}
+                    as="div"
+                    appear
+                    enter="transition ease-out duration-300"
+                    enterFrom="opacity-0 scale-95"
+                    enterTo="opacity-100 scale-100"
+                    leave="transition ease-in duration-200"
+                    leaveFrom="opacity-100 scale-100"
+                    leaveTo="opacity-0 scale-95"
                   >
-                    <Menu as="div" onClose={() => setMenuOpen(false)}>
-                      <MenuItems
-                        static
-                        className="rounded-3xl bg-[#F4F4F4] shadow-lg py-2 px-1 focus:outline-none"
-                      >
-                        {menu.map((item) => (
-                          <MenuItem key={item.text}>
-                            {() => (
-                              <div 
-                                className="relative"
-                                ref={el => menuItemRefs.current[item.text] = el}
-                                onMouseEnter={() => handleMouseEnter(item.text)}
-                                onMouseLeave={handleMouseLeave}
-                              >
-                                <button
-                                  onClick={() => {
-                                    if (!item.submenu) {
-                                      navigateTo(item.href, item.text);
-                                    }
-                                  }}
-                                  className="w-full text-left flex items-center justify-between px-4 py-2 text-sm font-bold rounded-full cursor-pointer whitespace-nowrap text-gray-900 hover:bg-[#231F20] hover:text-[#2BE028] transition-colors duration-300"
-                                >
-                                  <span>{item.text}</span>
-                                  {item.submenu && (
-                                    <IoIosArrowForward className="ml-2" size={10} />
-                                  )}
-                                </button>
+                    <button
+                      onClick={() => setMenuOpen(true)}
+                      className={`absolute inline-flex items-center justify-center text-sm font-semibold cursor-pointer px-6 py-2 transition-all duration-300 text-left focus:outline-none rounded-full bg-[#231F20] shadow-lg text-[#2BE028] whitespace-nowrap ${!headerSpacer ? "border-2 border-[#FBFBFB]" : ""} `}
+                    >
+                      {selectedItem}
+                    </button>
+                  </Transition>
 
-                                {/* Submenu */}
-                                <AnimatePresence>
-                                  {item.submenu && hoveredItem === item.text && (
-                                    <div 
-                                      className="absolute left-full top-0 z-20 min-w-max"
-                                      style={{ marginLeft: '0.5rem' }}
-                                      onMouseEnter={handleSubmenuMouseEnter}
-                                      onMouseLeave={handleSubmenuMouseLeave}
+                  {/* Menu */}
+                  <AnimatePresence>
+                    {menuOpen && (
+                      <motion.div
+                        initial="hidden"
+                        animate="visible"
+                        exit="exit"
+                        variants={menuVariants}
+                        className="absolute top-0 left-0 z-10 origin-top-left"
+                      >
+                        <Menu as="div" onClose={() => setMenuOpen(false)}>
+                          <MenuItems
+                            static
+                            className="rounded-3xl bg-[#F4F4F4] shadow-lg py-2 px-1 focus:outline-none"
+                          >
+                            {menu.map((item) => (
+                              <MenuItem key={item.text}>
+                                {() => (
+                                  <div
+                                    className="relative"
+                                    ref={el => menuItemRefs.current[item.text] = el}
+                                    onMouseEnter={() => handleMouseEnter(item.text)}
+                                    onMouseLeave={handleMouseLeave}
+                                  >
+                                    <button
+                                      onClick={() => {
+                                        if (!item.submenu) {
+                                          navigateTo(item.href, item.text);
+                                        }
+                                      }}
+                                      className="w-full text-left flex items-center justify-between px-4 py-2 text-sm font-bold rounded-full cursor-pointer whitespace-nowrap text-gray-900 hover:bg-[#231F20] hover:text-[#2BE028] transition-colors duration-300"
                                     >
-                                      <motion.div
-                                        initial="hidden"
-                                        animate="visible"
-                                        exit="exit"
-                                        variants={submenuVariants}
-                                        className="bg-[#F4F4F4] rounded-xl shadow-lg py-2 px-1 ml-2"
-                                      >
-                                        {item.submenu.map((subItem) => (
-                                          <button
-                                            key={subItem.text}
-                                            onClick={() => navigateTo(subItem.href, subItem.text)}
-                                            className="w-full text-left block px-4 py-2 text-sm font-bold rounded-full whitespace-nowrap text-gray-900 hover:bg-[#231F20] hover:text-[#2BE028] transition-colors cursor-pointer duration-300"
+                                      <span>{item.text}</span>
+                                      {item.submenu && (
+                                        <IoIosArrowForward className="ml-2" size={10} />
+                                      )}
+                                    </button>
+
+                                    {/* Submenu */}
+                                    <AnimatePresence>
+                                      {item.submenu && hoveredItem === item.text && (
+                                        <div
+                                          className="absolute left-full top-0 z-20 min-w-max"
+                                          style={{ marginLeft: '0.5rem' }}
+                                          onMouseEnter={handleSubmenuMouseEnter}
+                                          onMouseLeave={handleSubmenuMouseLeave}
+                                        >
+                                          <motion.div
+                                            initial="hidden"
+                                            animate="visible"
+                                            exit="exit"
+                                            variants={submenuVariants}
+                                            className="bg-[#F4F4F4] rounded-xl shadow-lg py-2 px-1 ml-2"
                                           >
-                                            {subItem.text}
-                                          </button>
-                                        ))}
-                                      </motion.div>
-                                    </div>
-                                  )}
-                                </AnimatePresence>
-                              </div>
-                            )}
-                          </MenuItem>
-                        ))}
-                      </MenuItems>
-                    </Menu>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                                            {item.submenu.map((subItem) => (
+                                              <button
+                                                key={subItem.text}
+                                                onClick={() => navigateTo(subItem.href, subItem.text)}
+                                                className="w-full text-left block px-4 py-2 text-sm font-bold rounded-full whitespace-nowrap text-gray-900 hover:bg-[#231F20] hover:text-[#2BE028] transition-colors cursor-pointer duration-300"
+                                              >
+                                                {subItem.text}
+                                              </button>
+                                            ))}
+                                          </motion.div>
+                                        </div>
+                                      )}
+                                    </AnimatePresence>
+                                  </div>
+                                )}
+                              </MenuItem>
+                            ))}
+                          </MenuItems>
+                        </Menu>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              </div>
+            </div>
+
+            {/* Center - Logo */}
+            <div className="basis-1/3 md:basis-2/4 flex justify-center">
+              <img
+                src={bigScreenlogo}
+                alt="The Factory Logo"
+                className={`hidden md:block transition-all duration-300 ease-in-out ${isScrolled ? "h-8" : "h-11"}`}
+              />
+              <img
+                src={smallScreenLogo}
+                alt="The Factory Logo"
+                className={`h-9 w-auto md:hidden transition-all duration-300 ease-in-out ${isScrolled ? "h-7" : "h-9"}`}
+              />
+            </div>
+
+            {/* Right Side - Subscribe Button */}
+            <div className="basis-1/3 md:basis-1/4 text-end">
+              <button
+                className={`rounded-full bg-[#231F20] text-[#ECFBEB] font-semibold px-4 md:px-6 py-2 text-sm md:text-base cursor-pointer shadow-lg ${!headerSpacer ? "border-2 border-[#FBFBFB]" : ""}`}
+                onClick={() => setIsSignUpOpen(true)}
+              >
+                Subscribe
+              </button>
             </div>
           </div>
         </div>
 
-        {/* Center - Logo */}
-        <div className="basis-1/3 md:basis-2/4 flex justify-center">
-          <img
-            src={bigScreenlogo}
-            alt="The Factory Logo"
-            className={`hidden md:block transition-all duration-300 ease-in-out ${isScrolled ? "h-8" : "h-11"}`}
-          />
-          <img
-            src={smallScreenLogo}
-            alt="The Factory Logo"
-            className={`h-9 w-auto md:hidden transition-all duration-300 ease-in-out ${isScrolled ? "h-7" : "h-9"}`}
-          />
-        </div>
+        {/* Mobile Menu */}
+      <header className="md:hidden">
+        <MobileMenu
+          isSignUpOpen={isSignUpOpen} 
+          setIsSignUpOpen={setIsSignUpOpen}
+          jukebox={jukebox}
+        />
+      </header>
 
-        {/* Right Side - Subscribe Button */}
-        <div className="basis-1/3 md:basis-1/4 text-end">
-          <button
-            className={`rounded-full bg-[#231F20] text-[#ECFBEB] font-semibold px-4 md:px-6 py-2 text-sm md:text-base cursor-pointer shadow-lg ${!headerSpacer ? "border-2 border-[#FBFBFB]" : "" }`}
-            onClick={() => setIsSignUpOpen(true)}
-          >
-            Subscribe
-          </button>
-        </div>
-      </div>
 
-      {/* Sign-Up Modal */}
-      <AuthModal isOpen={isSignUpOpen} setIsOpen={setIsSignUpOpen} />
-    </header>
+        {/* Sign-Up Modal */}
+        <AuthModal isOpen={isSignUpOpen} setIsOpen={setIsSignUpOpen} />
+      </header>
 
-                {/* Mobile Menu */}
-    {/* <header className="md:hidden">
-                <Navbar />
-    </header> */}
-    
-    {/* Add spacing to prevent content overlap */}
-   
-    { headerSpacer && <HeaderSpacer isScrolled={isScrolled} />}
-   
+      
+
+      {/* Add spacing to prevent content overlap */}
+
+      {headerSpacer && <HeaderSpacer isScrolled={isScrolled} />}
+
     </>
   );
 };

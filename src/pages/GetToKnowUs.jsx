@@ -1,6 +1,5 @@
 import React from 'react'
 import Header from '../components/shared/Header'
-import Grid from '../assets/Grid.png'
 import GallerySection from '../components/getToKnowUs/GallerySection'
 import Footer from '../components/shared/Footer'
 import OurStoryGetToKnow from '../components/getToKnowUs/OurStoryGetToKnow'
@@ -12,7 +11,7 @@ import DarkLogoSmall from "../assets/logo_icon.png";
 
 const GetToKnowUs = () => {
   return (
-    <div style={{ backgroundImage: `url(${Grid})` }} className="h-[11b5vh] bg-[#F4F4F4]">
+    <div className="h-[11b5vh] bg-[#FBFBFB]">
         <Header
           bigScreenlogo={DarkLogo}
           smallScreenLogo={DarkLogoSmall}

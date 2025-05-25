@@ -40,7 +40,7 @@ const OurStoryGetToKnow = () => {
         </>
     )
     return (
-        <div className='bg-[#F4F4F4]'>
+        <div className=''>
             <StoryComponent
                 sec_title="our story"
                 img1={Festus}

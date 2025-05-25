@@ -1,180 +1,151 @@
-import { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { IoMdClose } from 'react-icons/io';
-import LogoBlack from '../../assets/logo.png';
-import { Link } from 'react-router'; 
+
+import React, { useState, useCallback, useEffect } from 'react';
+import { GoChevronDown, GoChevronRight  } from "react-icons/go";
 import { FiMenu } from 'react-icons/fi';
+import { IoMdClose } from 'react-icons/io';
+import { useNavigate } from 'react-router';
+import { AnimatePresence, motion } from 'framer-motion';
+import LogoBlack from '../../assets/logo.png';
+import WhiteLogo from "../../assets/FactoryLogoWhite.png"
+import { menu } from '../../utils/menus';
 
-const menuItems = [
-    { href: "/", text: "Home" },
-    { href: "/get-to-know-us", text: "Get To Know Us" },
-    { href: "/innovation-expo", text: "Innovation Expo" },
-    {
-      href: "#",
-      text: "Our Services",
-      submenu: [
-        { href: "/jukebox", text: "Jukebox" },
-        { href: "/co-working-space", text: "Co-Working Space" },
-        { href: "/bootcamps-and-training", text: "Bootcamps & Training" },
-      ]
-    },
-  ];
-  
-
-
-const MobileMenu = ({ isOpen, onClose }) => {
-  const [openSubmenuIndex, setOpenSubmenuIndex] = useState(null);
-
-  const toggleSubmenu = (index) => {
-    setOpenSubmenuIndex((prevIndex) => (prevIndex === index ? null : index));
-  };
-
-  return (
-    <AnimatePresence>
-      {isOpen && (
-        <motion.nav
-          initial={{ x: '100%' }}
-          animate={{ x: 0 }}
-          exit={{ x: '100%' }}
-          transition={{ type: 'tween', duration: 0.4 }}
-          className="fixed top-0 left-0 w-full h-full bg-white z-[100] px-6 pt-6 overflow-y-auto"
-        >
-          <div className="flex justify-between items-center mb-6">
-            <div className="flex items-center space-x-2">
-              <img
-                src={LogoBlack}
-                alt="THE FACTORY logo"
-                className="h-10 md:h-12 object-contain"
-              />
-            </div>
-            <button onClick={onClose} aria-label="Close menu">
-              <IoMdClose className="text-3xl" />
-            </button>
-          </div>
-
-          <ul className="space-y-6 border-t border-gray-300 pt-4">
-            {menuItems.map((item, idx) => (
-              <li key={idx} className="border-b border-dashed pb-3">
-                {item.submenu ? (
-                  <>
-                    <button
-                      onClick={() => toggleSubmenu(idx)}
-                      className="text-lg font-medium w-full text-left"
-                    >
-                      {item.text}
-                    </button>
-                    <AnimatePresence>
-                      {openSubmenuIndex === idx && (
-                        <motion.ul
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: 'auto', opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          className="ml-4 mt-2 space-y-2"
-                        >
-                          {item.submenu.map((subItem, subIdx) => (
-                            <li key={subIdx}>
-                              <Link
-                                to={subItem.href}
-                                className="text-base text-gray-700 hover:text-black"
-                              >
-                                {subItem.text}
-                              </Link>
-                            </li>
-                          ))}
-                        </motion.ul>
-                      )}
-                    </AnimatePresence>
-                  </>
-                ) : (
-                  <a
-                    href={item.href}
-                    className="text-lg font-medium text-gray-900"
-                  >
-                    {item.text}
-                  </a>
-                )}
-              </li>
-            ))}
-          </ul>
-
-          <div className="mt-10">
-            <button className="w-full border border-black rounded-full py-3 font-semibold hover:bg-black hover:text-white transition-all">
-              Subscribe
-            </button>
-          </div>
-        </motion.nav>
-      )}
-    </AnimatePresence>
-  );
-};
-
-
-const Navbar = () => {
+const MobileMenu = ({ isSignUpOpen, setIsSignUpOpen, jukebox=false }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [expandedSubmenu, setExpandedSubmenu] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 10);
+    document.body.style.overflow = isOpen ? 'hidden' : 'unset';
+    return () => {
+      document.body.style.overflow = 'unset';
     };
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
+  }, [isOpen]);
+
+  const handleOpen = useCallback(() => setIsOpen(true), []);
+  const handleClose = useCallback(() => {
+    setIsOpen(false);
+    setExpandedSubmenu(null);
   }, []);
 
+  const handleNavigation = useCallback((href) => {
+    if (href === '#') return;
+  
+    // Close menu first (trigger slide out)
+    setIsOpen(false);
+    setExpandedSubmenu(null);
+  
+    // Delay navigation until animation finishes
+    setTimeout(() => {
+      navigate(href);
+    }, 400); // same as the exit animation duration
+  }, [navigate]);
+  
+
+  const toggleSubmenu = useCallback((menuId) => {
+    setExpandedSubmenu(expandedSubmenu === menuId ? null : menuId);
+  }, [expandedSubmenu]);
+
   return (
-    <>
-      <motion.header
-        initial={{ y: -50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ type: 'spring', stiffness: 80, damping: 12 }}
-        className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300"
-      >
-        <motion.div
-          animate={{
-            paddingTop: scrolled ? '0.75rem' : '1.25rem',
-            paddingBottom: scrolled ? '0.75rem' : '1.25rem',
-          }}
-          transition={{ duration: 0.3, ease: 'easeInOut' }}
-          className="px-4 flex justify-between items-center"
+    <div className="relative">
+      {/* Header */}
+      <header className={`${jukebox ? "bg-[#231F20CC] text-[#FBFBFB]" : "bg-[#FBFBFB]"} shadow-sm p-4 flex items-center justify-between`}>
+        <img src={jukebox ? WhiteLogo : LogoBlack} alt="Logo" className="h-8 object-contain" />
+        <button
+          onClick={handleOpen}
+          className={`p-2 border-2 ${jukebox ? "border-[#FBFBFB]" : "border-[#231F20]"}  rounded-lg border-dashed`}
         >
-          {/* Logo */}
+          <FiMenu className="text-2xl" />
+        </button>
+      </header>
+
+      {/* Slide-In Mobile Menu */}
+      <AnimatePresence>
+        {isOpen && (
           <motion.div
-            className="flex items-center space-x-2"
-            animate={{
-              scale: scrolled ? 0.9 : 1,
-            }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            key="menu"
+            initial={{ y: '-100%' }}
+            animate={{ y: 0 }}
+            exit={{ y: '-100%' }}
+            transition={{ duration: 0.4, ease: 'easeInOut' }}
+            className={`fixed inset-0 z-50 ${jukebox ? "bg-[#231F20] text-[#FBFBFB]" : "bg-[#FBFBFB]"} flex flex-col`}
+            style={{ height: '100vh' }}
           >
-            <motion.img
-              src={LogoBlack}
-              alt="THE FACTORY logo"
-              className="h-10 md:h-12 object-contain"
-              animate={{
-                scale: scrolled ? 0.9 : 1,
-              }}
-              transition={{ duration: 0.3, ease: 'easeInOut' }}
-            />
+            {/* Menu Header */}
+            <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200">
+              <img src={jukebox ? WhiteLogo : LogoBlack} alt="Logo" className="h-8 object-contain" />
+              <button
+                onClick={handleClose}
+                className="p-2 hover:bg-gray-100 rounded-full transition"
+              >
+                <IoMdClose className="text-2xl" />
+              </button>
+            </div>
+
+            {/* Menu Items */}
+            <div className="flex-1 overflow-y-auto pxc-6 py-4">
+              <div className="space-y-2">
+                {menu.map((item) => (
+                  <div key={item.id}>
+                    <button
+                      onClick={() =>
+                        item.submenu
+                          ? toggleSubmenu(item.id)
+                          : handleNavigation(item.href)
+                      }
+                      className={`w-full py-4 px-6 text-left text-xl font-medium flex items-center justify-between ${jukebox ? "text-[#FBFBFB] hover:text-[#231F20]" : "text-[#231F20]"}  hover:bg-gray-100 transition border-b border-dashed primary-font`}
+                    >
+                      <span>{item.text}</span>
+                      {item.submenu && (
+                        <GoChevronDown
+                          size={20}
+                          className={`transition-transform duration-200 ${
+                            expandedSubmenu === item.id ? 'rotate-180' : ''
+                          }`}
+                        />
+                      )}
+                    </button>
+
+                    {/* Submenu */}
+                    <AnimatePresence>
+                      {expandedSubmenu === item.id && (
+                        <motion.div
+                          initial={{ height: 0 }}
+                          animate={{ height: 'auto' }}
+                          exit={{ height: 0 }}
+                          transition={{ duration: 0.25 }}
+                          className="pl-6 space-y-1 overflow-hidden"
+                        >
+                          {item.submenu.map((subItem) => (
+                            <button
+                              key={subItem.id}
+                              onClick={() => handleNavigation(subItem.href)}
+                              className={`block w-full py-3 px-2 text-left text-base ${jukebox ? "text-[#FBFBFB]" : "text-gray-600"}  hover:text-black hover:bg-gray-100 rounded-lg transition`}
+                            >
+                              <div className="flex items-center">
+                                <GoChevronRight size={16} className="mr-2 text-gray-400" />
+                                {subItem.text}
+                              </div>
+                            </button>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Footer */}
+            <div className="px-6 py-6 border-t border-gray-200">
+              <button className={`w-full py-4 border border-dashed ${jukebox ? "border-[#FBFBFB] text-[#FBFBFB] " : "border-[#231F20]  text-[#231F20]"}  font-medium rounded-full hover:bg-gray-100 hover:text-[#231F20] transition`} onClick={() => setIsSignUpOpen(true)}>
+                Subscribe
+              </button>
+            </div>
           </motion.div>
-
-          {/* Hamburger */}
-          <motion.button
-            onClick={() => setIsOpen(true)}
-            aria-label="Open menu"
-            className="p-2 border-2 border-[#231F20] rounded-lg border-dashed"
-            animate={{
-              scale: scrolled ? 0.9 : 1,
-            }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
-          >
-            <FiMenu className="text-2xl" />
-          </motion.button>
-        </motion.div>
-      </motion.header>
-
-      {/* ✅ Move this outside the header */}
-      <MobileMenu isOpen={isOpen} onClose={() => setIsOpen(false)} />
-    </>
+        )}
+      </AnimatePresence>
+    </div>
   );
 };
 
-export default Navbar;
+export default MobileMenu;

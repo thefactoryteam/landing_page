@@ -18,6 +18,7 @@ const Jukebox = () => {
             headerSpacer={false}
             bigScreenlogo={WhiteLogo}
             smallScreenLogo={WhiteLogoSmall}
+            jukebox={true}
         />
         <Hero />
         <WhyJuxBox />

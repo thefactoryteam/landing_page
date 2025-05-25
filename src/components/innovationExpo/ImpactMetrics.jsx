@@ -46,6 +46,7 @@ const ImpactMetrics = () => {
             <div className='flex justify-center mt-10'>
                 <ButtonComponent 
                     text="Become a Partner"
+                    href='/contact'
                 />
             </div>
             

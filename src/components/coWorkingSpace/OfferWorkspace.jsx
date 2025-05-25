@@ -119,6 +119,7 @@ const OfferWorkspace = () => {
                             text="Book Now"
                             Icon={BsCartCheck}
                             coWorking={true}
+                            href='/book-now'
                         />
                     </div>
                 )

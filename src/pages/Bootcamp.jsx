@@ -18,6 +18,10 @@ const Bootcamp = () => {
           smallScreenLogo={DarkLogoSmall}
         />
         <Hero />
+        <div className='md:hidden'>
+          <SectionSpacer />
+        </div>
+        
         <Slider />
         <SectionSpacer />
         <SkillsTrack />

@@ -45,7 +45,7 @@ const Footer = () => {
                             <Link to="/contact" className="rounded-full w-full text-center bg-[#231F20] text-[#ECFBEB] font-normal px-4 md:px-6 py-2 text-sm md:text-base cursor-pointer shadow-lg">Drop a message</Link>
                         </div>
                     
-                        <div className="flex gap-5 mt-10 justify-center">
+                        <div className="flex gap-5 mt-10 justify-cenmter">
                             <a href="https://instagram.com/_thefactoryhq" target='_blank'>
                                 <FaInstagram className="text-3xl cursor-pointer hover:text-[#2BE028] transform transition-transform duration-300 hover:scale-125 hover:-rotate-6" />
                             </a>

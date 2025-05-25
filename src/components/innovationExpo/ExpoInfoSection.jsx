@@ -92,7 +92,7 @@ const ExpoInfoSection = () => {
                     {valueCards.map((card, index) => (
                         <motion.div
                             key={index}
-                            className={`relative rounded-lg overflow-hidden h-96 p-6 border  ${card.dark
+                            className={`relative rounded-[20px] overflow-hidden h-96 p-6 border  ${card.dark
                                 ? 'bg-[#231F20] text-white '
                                 : 'bg-[#F4F4F4] text-gray-900 border-[#231F20] border-dashed'
                                 }`}
@@ -131,6 +131,7 @@ const ExpoInfoSection = () => {
 
                     <ButtonComponent
                         text="Register Now"
+                        href='/contact'
                     />
                 </motion.div>
             </div>

@@ -9,6 +9,7 @@ import Bootcamp from '../pages/Bootcamp'
 import { ToastContainer } from 'react-toastify'
 import Terms from '../pages/Terms'
 import Contact from '../pages/Contact'
+import BookNowPage from '../pages/BookNowPage'
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -35,6 +36,7 @@ const AppRoutes = () => {
             <Route path='/bootcamps-and-training' element={<Bootcamp />} />
             <Route path='/terms-of-service' element={<Terms />} />
             <Route path='/contact' element={<Contact />}/>
+            <Route path='/book-now' element={<BookNowPage />}/>
         </Routes>
         <ToastContainer />
     </div>
