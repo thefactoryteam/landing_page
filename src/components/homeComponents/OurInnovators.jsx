@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const OurInnovators = () => {
   return (
-    <section className='bg-[#F4F4F4]'>
+    <section className=''>
       <div className="primary-font grid grid-cols-1 md:grid-cols-3 max-w-4/5 md:max-w-3/4 w-full mx-auto py-20 relative overflow-hidden" id='innovation-expo'>
 
 

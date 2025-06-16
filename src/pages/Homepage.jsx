@@ -1,6 +1,5 @@
 import React from 'react'
 import Header from '../components/shared/Header'
-import Grid from '../assets/Grid.png'
 // import { Gallery } from '../components/Home/Gallery'
 // import VideoPlayerSection from '../components/Home/VideoPlayerSection'
 import Footer from '../components/shared/Footer'
@@ -15,7 +14,7 @@ import DarkLogoSmall from "../assets/logo_icon.png";
 const Homepage = () => {
   return (
     <>
-      <div style={{ backgroundImage: `url(${Grid})` }} className="h-screend">
+      <div  className="h-screend bg-[#FBFBFB]">
         <Header
           bigScreenlogo={DarkLogo}
           smallScreenLogo={DarkLogoSmall}
@@ -26,7 +25,7 @@ const Homepage = () => {
         <WhatWeDo />
         <OurInnovators />
         {/* <VideoPlayerSection /> */}
-        <PartnerSection />
+        {/* <PartnerSection /> */}
         <Footer />
       </div>
 

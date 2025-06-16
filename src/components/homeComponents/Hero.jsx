@@ -4,6 +4,7 @@ import ClipImage from "../../assets/home/madagascar-image.png";
 import BlackMarker from "../../assets/home/Black-marker-arrow.png";
 import BlackArrow from "../../assets/home/Black-arrow.png";
 import { Link } from "react-router";
+import Grid from '../../assets/Grid.png'
 
 const words = ["Africa", "Naija"];
 
@@ -19,7 +20,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="h-screen">
+    <section className="h-screen" style={{ backgroundImage: `url(${Grid})` }}>
       <div className="relative flex md:min-w-lg justify-center items-center h-5/6 overflow-hidden">
         <motion.div
           className="h-28 md:h-96 w-28 md:w-96 bg-[#2BE028] rounded-full absolute top-5 md:top-28 -left-20 md:-left-64"

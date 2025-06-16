@@ -1,5 +1,6 @@
 import React from 'react'
 import ImgApp from '../../assets/Jukebox/pitch.png'
+import VideoComponent from '../shared/VideoComponent';
 
 const criteria = [
     {
@@ -10,7 +11,7 @@ const criteria = [
     {
         number: '2.',
         title: 'Product Demo',
-        description: 'A link to a live demo or video walkthrough.'
+        description: 'See Bottom for Demo Video example.'
     },
     {
         number: '3.',
@@ -59,6 +60,10 @@ const RequiredMaterials = () => {
                     </div>
 
                 </div>
+            
+            <div className='my-20'>
+                <VideoComponent />
+            </div>       
             </div>
         </section>
     )

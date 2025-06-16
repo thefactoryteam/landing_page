@@ -1,14 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import InnovHeroImg from "../../assets/coworking/coHero.webp"
 
-const Hero = () => {
+const Hero = ({heroImg, subtitle}) => {
 
   return (
     <section className="w-full h-screen overflow-hidden px-4 pt-4 bg-white primary-font">
       <motion.div 
         className="relative w-full h-full bg-cover bg-center flex flex-col items-center justify-center rounded-t-3xl"
-        style={{ backgroundImage: `url(${InnovHeroImg})` }}
+        style={{ backgroundImage: `url(${heroImg})` }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
@@ -24,7 +23,7 @@ const Hero = () => {
         >
           CO-WORKING SPACE
         </motion.h1>
-        <p className='text-white text-[17px] md:text-3xl text-center z-10 md:mt-5'>Welcome to your productivity oasis</p>
+        <p className='text-white text-[17px] md:text-3xl text-center z-10 md:mt-5'>{subtitle} </p>
       </motion.div>
     </section>
   );

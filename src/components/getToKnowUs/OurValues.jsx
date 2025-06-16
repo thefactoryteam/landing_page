@@ -412,12 +412,12 @@ const OurValues = () => {
   ];
 
   return (
-    <section className='bg-[#F4F4F4]'>
+    <section className=''>
       <div className="relative max-w-6xl mx-auto py-0 md:py-20 px-4 overflow-hidden">
         <div className='text-center'>
           <SectionHeaders
             title="Our Values"
-            desc="Empowering Africa Through Innovation, Opportunity, and Excellence"
+            desc="Empowering progress through innovation, opportunity, and excellence."
             fadeInUp={FadeInUp}
           />
         </div>

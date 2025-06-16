@@ -55,7 +55,7 @@ const OurStory = () => {
     </>
   )
   return (
-    <section className="bg-[#F4F4F4]">
+    <section className="">
       <StoryComponent 
         sec_title="our story"
         img1={Img1}

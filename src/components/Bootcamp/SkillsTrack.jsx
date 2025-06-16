@@ -56,7 +56,7 @@ const SkillsTrack = () => {
 
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
                     {skills.map((skill, idx) => (
-                        <div key={idx} className='border border-dashed border-[#231F20] rounded-2xl p-10'>
+                        <div key={idx} className='border border-dashed border-[#231F20] bg-[#F4F4F4] rounded-2xl p-10'>
                             <div className='flex items-center gap-8'>
                                 <div>
                                     <img src={skill.icon} alt="" />

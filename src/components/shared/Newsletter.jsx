@@ -1,5 +1,5 @@
 import { DialogPanel, DialogTitle } from '@headlessui/react';
-import { FaGoogle } from "react-icons/fa6";
+import { FaGoogle, FaSpinner } from "react-icons/fa6";
 import FormInput from './FormInput';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
@@ -7,7 +7,6 @@ import axios from 'axios';
 
 
 const VITE_API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api/v1";
-console.log(VITE_API_URL);
 
 
 export default function Newsletter({ closeModal }) {
@@ -62,7 +61,7 @@ export default function Newsletter({ closeModal }) {
                 <div className="bg-white">
                     <DialogTitle className="text-3xl sm:text-4xl text-center font-semibold text-gray-900">
                         <span className="text-[#9A9A9A]">Building something that matters?</span>{' '}
-                        <span className="italic meriwether-font leading-3">the factory</span> is where founders plug into real momentum.
+                        <span className="italic meriwether-font leading-3">THE FACTORY </span> is where founders plug into real momentum.
                     </DialogTitle>
                     <p className="text-center text-gray-500 text-sm mt-2">
                         Get insider insights, market-tested tactics, and community support without the noise.
@@ -88,16 +87,20 @@ export default function Newsletter({ closeModal }) {
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className={`w-full sm:w-auto justify-center inline-flex items-center cursor-pointer gap-2 rounded-full px-8 py-2 text-lg font-semibold text-white ${
-                                    isSubmitting ? 'bg-gray-500 cursor-not-allowed' : 'bg-[#231F20] hover:bg-gray-900'
-                                }`}
+                                className={`w-full sm:w-auto justify-center inline-flex items-center cursor-pointer gap-2 rounded-full px-8 py-2 text-lg font-semibold text-white ${isSubmitting ? 'bg-gray-500 cursor-not-allowed' : 'bg-[#231F20] hover:bg-gray-900'
+                                    }`}
                             >
-                                {isSubmitting ? 'Submitting...' : 'Join the Factory'}
+                                {isSubmitting ? (
+                                    <>
+                                        <FaSpinner className="animate-spin h-5 w-5" />
+                                        <span className="italic">Submitting...</span>
+                                    </>
+                                ) : (
+                                    'Join the Factory'
+                                )}
                             </button>
-                            <p className="text-xs text-center text-gray-400 mt-2">
-                                No spam. Just real opportunities.
-                            </p>
                         </div>
+
                     </form>
                 </div>
             </DialogPanel>

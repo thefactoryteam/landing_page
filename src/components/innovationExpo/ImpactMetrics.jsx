@@ -6,7 +6,7 @@ import ButtonComponent from '../shared/ButtonComponent'
 
 const ImpactMetrics = () => {
     return (
-        <section className="w-full bg-gradient-to-b  from-gray-50 to-white py-20 px-4 md:px-8 lg:px-16">
+        <section className="w-full py-20 px-4 md:px-8 lg:px-16">
             <div className='text-center'>
                 <SectionHeaders
                     title="Impact Metrics"
@@ -46,6 +46,7 @@ const ImpactMetrics = () => {
             <div className='flex justify-center mt-10'>
                 <ButtonComponent 
                     text="Become a Partner"
+                    href='/contact'
                 />
             </div>
             

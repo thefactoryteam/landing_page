@@ -4,6 +4,7 @@ import { FadeInUp } from '../../utils/animations'
 import Gold from '../../assets/innovationExpo/gold.png'
 import Platinum from '../../assets/innovationExpo/platinum.png'
 import Silver from '../../assets/innovationExpo/silver.png'
+import Silver2 from '../../assets/innovationExpo/silver2.png'
 import Gold2 from '../../assets/innovationExpo/Gold2.png'
 import Platinum2 from '../../assets/innovationExpo/Platinum2.png'
 
@@ -20,11 +21,11 @@ const Sponsor = () => {
                 </div>
 
                 <div className='text-center md:hidden'>
-                    {[Platinum2, Silver, Gold2].map((card, idx) => (
+                    {[Platinum2, Silver2, Gold2].map((card, idx) => (
                         <img
                         src={card}
                         alt="Sponsor card"
-                        className="h-80 inline-block py-2"
+                        className="h- inline-block py-2"
                     />
                     ))}
                 </div>
