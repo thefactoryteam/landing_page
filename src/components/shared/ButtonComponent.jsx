@@ -2,7 +2,6 @@ import React from 'react'
 import { motion } from 'framer-motion';
 import { FaArrowRight } from "react-icons/fa6";
 import { Link } from 'react-router';
-import BookNowPage from '../../pages/BookNowPage';
 
 const ButtonComponent = ({ text, Icon = FaArrowRight, color = "text-white", size = "text-xs md:text-lg", fullWidth = "w-full", arrow = true, jukebox = false, coWorking = false, href="#" }) => {
     return (

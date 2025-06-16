@@ -71,11 +71,12 @@ const WhatWeDo = () => {
                             </motion.p>
 
                             {/* Learn more button */}
-                            <Link to="/jukebox" >
+                            
                                 <ButtonComponent
                                     text="Learn More"
+                                    href="/jukebox"
                                 />
-                            </Link>
+                        
 
 
                         </motion.div>
@@ -114,6 +115,8 @@ const WhatWeDo = () => {
 
                             <ButtonComponent
                                 text="Learn More"
+                                href="/bootcamps-and-training"
+
                             />
 
                         </motion.div>
@@ -140,12 +143,10 @@ const WhatWeDo = () => {
 
                             {/* Learn more button */}
 
-                            <Link to="/co-working-space">
                                 <ButtonComponent
                                     text="Learn More"
+                                    href="/co-working-space"
                                 />
-                            </Link>
-
 
                         </motion.div>
 

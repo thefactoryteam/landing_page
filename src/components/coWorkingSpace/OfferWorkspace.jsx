@@ -15,7 +15,8 @@ const offers = [
         features: ["One dedicated work desk.", "High-speed internet access.", "Access to the kitchen (shared amenities)."],
         benefits: ["Boost your productivity in a professional environment.", "Reliable internet access to power your work.", "Networking opportunities with like-minded professionals."],
         image: Img1,
-        imageSmallScreen: Img1SmallScreen
+        imageSmallScreen: Img1SmallScreen,
+        href: "solo-inovator/apply"
     },
     {
         title: "The Digital HQ Package (Business Registration)",
@@ -23,7 +24,8 @@ const offers = [
         features: ["Dedicated work desks for up to 4 team members.", "Free Trade Zone License (facilitated for your company).", "High-speed internet access.", "Virtual office address for correspondence.", "Business formation and legal compliance.", "Company signage on The Factory Logo Board."],
         benefits: ["Access Free Trade Zone benefits like tax exemptions and streamlined logistics.", "Establish a credible headquarters address in Tinapa.", "A collaborative environment to connect with other businesses."],
         image: Img2,
-        imageSmallScreen: Img2SmallScreen
+        imageSmallScreen: Img2SmallScreen,
+        href: "digital-hq/apply"
     },
     {
         title: "The Team Catalyst Package",
@@ -31,7 +33,8 @@ const offers = [
         features: ["Dedicated workspace for 4", "High-speed internet access.", "Access to the kitchen (shared amenities)."],
         benefits: ["A private and distraction-free workspace.", "Flexible options for a team size of 4.", "Build connections within a thriving business community."],
         image: Img3,
-        imageSmallScreen: Img3SmallScreen
+        imageSmallScreen: Img3SmallScreen,
+        href: "team-catalyst/apply"
     }
 ]
 
@@ -40,7 +43,7 @@ const OfferWorkspace = () => {
     return (
         <section className=" primary-font px-8 md:px-0">
             {/* <div className=''> */}
-            {offers.map(({ title, desc, features, benefits, image, imageSmallScreen }, idx) => {
+            {offers.map(({ title, desc, features, benefits, image, imageSmallScreen, href }, idx) => {
                 return (
                     <div key={idx} className='p-5 md:p-14 max-w-5xl bg-[#F4F4F4] mx-auto border-2 rounded-xl border-dashed border-[#231F20] mb-[70px]'>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -48,7 +51,7 @@ const OfferWorkspace = () => {
                             {/* Image Section */}
                             <div className="md:hidden">
                                 <img
-                                    src={imageSmallScreen} // Replace this with your actual image path or import
+                                    src={imageSmallScreen}
                                     alt="Woman working"
                                     className="rounded-xl w-full md:w-[300px] lg:w-[600px] object-cover"
                                 />
@@ -119,7 +122,7 @@ const OfferWorkspace = () => {
                             text="Book Now"
                             Icon={BsCartCheck}
                             coWorking={true}
-                            href='/book-now'
+                            href={href}
                         />
                     </div>
                 )

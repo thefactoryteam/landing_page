@@ -18,7 +18,7 @@ const Exhibitors = () => {
     const carouselImg = [Img1, Img2, Img3, Img4, Img5, Img6, Img7, Img8, Img9, Img10]
     
     return (
-        <section className='w-full bg-gradient-to-b from-white to-gray-50 py-8 pxd-4 md:px-d8 lg:px-1d6'>
+        <section className='w-full py-8 pxd-4 md:px-d8 lg:px-1d6 overflow-hidden'>
             <div className='max-w-4xl mx-auto'>
                 <div className='text-center'>
                     <motion.h2 

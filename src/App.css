@@ -36,3 +36,42 @@
   position: fixed;
   width: 100%;
 }
+/* 
+.react-tel-input .flag{
+  width: 20px !important;
+  height: 15px !important;
+} */
+
+.react-tel-input .selected-flag{
+  width: auto !important;
+}
+.phone-input-container .selected-flag{
+  display: flex !important;
+  justify-content: center !important;
+}
+.swiper{
+  border-radius: 32px !important;
+}
+
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal{
+    bottom: var(--swiper-pagination-bottom, 0px) !important;
+}
+.mySwiper {
+    padding-bottom: 40px !important;
+}
+
+
+
+.swiper-pagination-bullet {
+  width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 15px)) !important;
+  height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 15px)) !important;
+  transition: all 0.3s ease-in-out !important;
+  background-color: #231F20 !important;
+  opacity: var(--swiper-pagination-bullet-inactive-opacity, none) !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #2BE028 !important;
+  border-radius: 50px !important;
+  border: 1px dashed #231F20 !important;
+}

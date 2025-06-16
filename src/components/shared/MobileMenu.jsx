@@ -92,7 +92,7 @@ const MobileMenu = ({ isSignUpOpen, setIsSignUpOpen, jukebox=false }) => {
                           ? toggleSubmenu(item.id)
                           : handleNavigation(item.href)
                       }
-                      className={`w-full py-4 px-6 text-left text-xl font-medium flex items-center justify-between ${jukebox ? "text-[#FBFBFB] hover:text-[#231F20]" : "text-[#231F20]"}  hover:bg-gray-100 transition border-b border-dashed primary-font`}
+                      className={`w-full py-4 px-6 text-left text-3xl font-medium flex items-center justify-between ${jukebox ? "text-[#FBFBFB] hover:text-[#231F20]" : "text-[#231F20]"}  hover:bg-gray-100 transition border-b border-dashed primary-font`}
                     >
                       <span>{item.text}</span>
                       {item.submenu && (
@@ -136,7 +136,7 @@ const MobileMenu = ({ isSignUpOpen, setIsSignUpOpen, jukebox=false }) => {
             </div>
 
             {/* Footer */}
-            <div className="px-6 py-6 border-t border-gray-200">
+            <div className="px-6 py-12 border-t border-gray-200">
               <button className={`w-full py-4 border border-dashed ${jukebox ? "border-[#FBFBFB] text-[#FBFBFB] " : "border-[#231F20]  text-[#231F20]"}  font-medium rounded-full hover:bg-gray-100 hover:text-[#231F20] transition`} onClick={() => setIsSignUpOpen(true)}>
                 Subscribe
               </button>

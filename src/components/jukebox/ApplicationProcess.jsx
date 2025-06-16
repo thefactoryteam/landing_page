@@ -84,7 +84,7 @@ const ApplicationProcess = () => {
                 <div className='flex justify-center'>
                     <ButtonComponent
                         text="Apply Now"
-                        href="/contact"
+                        href="/jukebox/apply"
                     />
                 </div>
             </div>

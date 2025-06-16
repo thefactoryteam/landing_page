@@ -1,5 +1,6 @@
 import React from 'react'
 import ImgApp from '../../assets/Jukebox/pitch.png'
+import VideoComponent from '../shared/VideoComponent';
 
 const criteria = [
     {
@@ -59,6 +60,10 @@ const RequiredMaterials = () => {
                     </div>
 
                 </div>
+            
+            <div className='my-20'>
+                <VideoComponent />
+            </div>       
             </div>
         </section>
     )

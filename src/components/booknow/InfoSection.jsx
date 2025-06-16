@@ -2,7 +2,7 @@
 import React from 'react';
 
 
-const InfoDetail = ({ title, items }) => {
+const InfoDetail = ({ title, items= [] }) => {
 
   return (
     <div className="text-center my-10">
@@ -20,24 +20,16 @@ const InfoDetail = ({ title, items }) => {
 
 
 
-export default function InfoSection() {
+export default function InfoSection({ features, benefits }) {
     return (
       <main className="max-w-4xl mx-auto px-4 pb-12 text-center">
         <InfoDetail
           title="Features"
-          items={[
-            'One Dedicated Work Desk.',
-            'High-Speed Internet Access.',
-            'Access To The Kitchen (Shared Amenities).',
-          ]}
+          items={features}
         />
         <InfoDetail
           title="Benefits"
-          items={[
-            'Boost Your Productivity In A Professional Environment.',
-            'Reliable Internet Access To Power Your Work.',
-            'Networking Opportunities With Like-Minded Professionals.',
-          ]}
+          items={benefits}
         />
         <p className="text-xl md:text-3xl text-center meriwether-font mt-24">
           Fill Out The Form Below To Book Your Preferred Package.

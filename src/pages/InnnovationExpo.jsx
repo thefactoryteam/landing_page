@@ -12,10 +12,18 @@ import BootBenefits from '../components/innovationExpo/BootBenefits'
 import Footer from '../components/shared/Footer'
 import DarkLogo from "../assets/logo.png";
 import DarkLogoSmall from "../assets/logo_icon.png";
+import { Helmet } from 'react-helmet-async'
 
 const InnnovationExpo = () => {
   return (
-    <div>
+    <>
+      <Helmet>
+        <title>Innovation Expo – The Factory</title>
+        <meta name="description" content="Experience Africa’s boldest tech showcases at our annual Innovation Expo — where talent meets opportunity." />
+        <link rel="canonical" href="https://techfactory.xyz/innovation-expo" />
+      </Helmet>
+
+      <div>
         <Header
           bigScreenlogo={DarkLogo}
           smallScreenLogo={DarkLogoSmall}
@@ -30,7 +38,9 @@ const InnnovationExpo = () => {
         <Exhibitors />
         <BootBenefits />
         <Footer />
-    </div>
+      </div>
+    </>
+
   )
 }
 

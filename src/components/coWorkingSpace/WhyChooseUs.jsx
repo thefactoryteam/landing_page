@@ -13,7 +13,7 @@ import { FadeInUp } from '../../utils/animations';
 const FeatureCard = ({ icon, title, text, image, descHeight="h-72" }) => {
     return (
         <div className=" ">
-            <div className={`p-10 ${descHeight} flex flex-col gap-4 border border-dashed border-[#231F20] border-b-0 rounded-t-xl`}>
+            <div className={`p-10 ${descHeight} flex flex-col gap-4 bg-[#F4F4F4] border border-dashed border-[#231F20] border-b-0 rounded-t-xl`}>
                 {/* Icon */}
                 <div className="w-5 md:w-8 h-5 md:h-8">
                     <img src={icon} alt="" />
